@@ -1,0 +1,39 @@
+# ── Python ─────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+venv/
+.env
+pip-log.txt
+
+# ── Java / Kotlin ──────────────
+*.class
+*.jar
+*.war
+*.dex
+build/
+.gradle/
+local.properties
+*.iml
+.idea/
+
+# ── JavaScript / Node ──────────
+node_modules/
+npm-debug.log
+package-lock.json
+yarn.lock
+.eslintcache
+
+# ── OS ─────────────────────────
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# ── Chorty ─────────────────────
+*.log
+temp/
+cache/
