@@ -1,0 +1,69 @@
+{
+  "id": "interface.cartoes",
+  "versao": "1.0",
+  "autor": "comunidade-chorty",
+  "descricao": "Componentes de cartões estilizados para Chorty",
+
+  "estilos": "
+    .ic-cartao-glass {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 16px;
+    }
+    .ic-cartao-sombra {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+    .ic-cartao-cor {
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 16px;
+      color: #fff;
+    }
+    .ic-cartao-cor-azul    { background: #2563eb; }
+    .ic-cartao-cor-verde   { background: #16a34a; }
+    .ic-cartao-cor-roxo    { background: #7c3aed; }
+    .ic-cartao-cor-laranja { background: #ea580c; }
+    .ic-titulo-lib { font-size: 1.1rem; font-weight: 700; margin-bottom: 6px; }
+    .ic-texto-lib  { font-size: 0.9rem; opacity: 0.85; }
+    .ic-numero-lib { font-size: 2rem; font-weight: 800; margin: 8px 0; }
+  ",
+
+  "scripts": "
+    function ic_copiar(texto) {
+      navigator.clipboard && navigator.clipboard.writeText(texto);
+    }
+  ",
+
+  "componentes": {
+    "cartao_glass": {
+      "template": "<div class='ic-cartao-glass'>{{conteudo}}</div>",
+      "atributos": ["conteudo"]
+    },
+    "cartao_sombra": {
+      "template": "<div class='ic-cartao-sombra'>{{conteudo}}</div>",
+      "atributos": ["conteudo"]
+    },
+    "cartao_cor": {
+      "template": "<div class='ic-cartao-cor ic-cartao-cor-{{cor}}'>{{conteudo}}</div>",
+      "atributos": ["cor", "conteudo"]
+    },
+    "metrica": {
+      "template": "<div class='ic-cartao-sombra'><div class='ic-titulo-lib'>{{rotulo}}</div><div class='ic-numero-lib' {{tmplAttr}}>{{valor}}</div><div class='ic-texto-lib'>{{descricao}}</div></div>",
+      "atributos": ["rotulo", "valor", "descricao"]
+    }
+  },
+
+  "funcoes": {
+    "copiar": {
+      "params": ["texto"],
+      "js": "ic_copiar(texto)"
+    }
+  }
+}
