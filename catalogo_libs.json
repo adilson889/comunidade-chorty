@@ -1,0 +1,62 @@
+[
+{
+"id": "interface.cartoes",
+"nome": "Interface: Cartões",
+"alias": "ic",
+"versao": "1.0",
+"autor": "comunidade-chorty",
+"descricao": "Componentes de cartões estilizados: glass, sombra, cor e métricas.",
+"tamanho": "4 KB",
+"url": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/interface/cartoes/1.0.chorty-lib"
+},
+{
+"id": "interface.formularios",
+"nome": "Interface: Formulários",
+"alias": "if",
+"versao": "1.0",
+"autor": "comunidade-chorty",
+"descricao": "Campos avançados: validação, máscaras, upload com pré-visualização.",
+"tamanho": "6 KB",
+"url": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/interface/formularios/1.0.chorty-lib"
+},
+{
+"id": "interface.graficos",
+"nome": "Interface: Gráficos",
+"alias": "ig",
+"versao": "1.0",
+"autor": "comunidade-chorty",
+"descricao": "Gráficos de barras, linhas e pizza com dados reactivos.",
+"tamanho": "12 KB",
+"url": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/interface/graficos/1.0.chorty-lib"
+},
+{
+"id": "utilitarios.datas",
+"nome": "Utilitários: Datas",
+"alias": "dt",
+"versao": "1.0",
+"autor": "comunidade-chorty",
+"descricao": "Formatar, comparar e calcular datas em Português.",
+"tamanho": "3 KB",
+"url": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/utilitarios/datas/1.0.chorty-lib"
+},
+{
+"id": "utilitarios.validacao",
+"nome": "Utilitários: Validação",
+"alias": "vl",
+"versao": "1.0",
+"autor": "comunidade-chorty",
+"descricao": "Validar emails, telefones, NIF, IBAN e outros formatos.",
+"tamanho": "3 KB",
+"url": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/utilitarios/validacao/1.0.chorty-lib"
+},
+{
+"id": "auth.basico",
+"nome": "Auth: Básico",
+"alias": "ab",
+"versao": "1.0",
+"autor": "comunidade-chorty",
+"descricao": "Login e registo simples com sessão em localStorage.",
+"tamanho": "5 KB",
+"url": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/auth/basico/1.0.chorty-lib"
+}
+]
