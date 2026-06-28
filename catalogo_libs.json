@@ -1,5 +1,15 @@
 [
   {
+    "id": "autenticacao",
+    "nome": "autenticacao",
+    "alias": "au",
+    "versao": "1.0",
+    "autor": "comunidade-chorty",
+    "descricao": "Autenticacao completa — registo, login, sessao com localStorage.",
+    "tamanho": "2 KB",
+    "url": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/autenticacao/1.0.chorty-lib"
+  },
+  {
     "id": "estrutura.dados",
     "nome": "estrutura.dados",
     "alias": "ed",
