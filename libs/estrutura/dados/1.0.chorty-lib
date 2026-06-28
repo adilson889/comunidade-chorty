@@ -1,6 +1,6 @@
 {
   "id": "estrutura.dados",
-  "alias": "ed",
+  "alias": "ed", 
   "versao": "1.0",
   "autor": "comunidade-chorty",
   "descricao": "Estrutura de Dados — SQL em português puro. SELECT, INSERT, UPDATE, DELETE, tabelas, índices, transacções e mais.",
