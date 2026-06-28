@@ -1,4 +1,3 @@
-```markdown
 # Estrutura de Dados (ed)
 
 ## Conceito
