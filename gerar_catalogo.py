@@ -1,23 +1,25 @@
 import json
 import os
-import re
 
 PASTA_LIBS = "libs"
 FICHEIRO_CATALOGO = "catalogo_libs.json"
+BASE_URL = "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main"
 
 def extrair_metadados(caminho):
     try:
         with open(caminho, "r", encoding="utf-8") as f:
             dados = json.load(f)
+        lib_id = dados.get("id", "")
         return {
-            "id": dados.get("id", ""),
-            "nome": dados.get("nome", dados.get("id", "")),
+            "id": lib_id,
+            "nome": dados.get("nome", lib_id),
             "alias": dados.get("alias", ""),
             "versao": dados.get("versao", "1.0"),
             "autor": dados.get("autor", "desconhecido"),
             "descricao": dados.get("descricao", ""),
             "tamanho": f"{os.path.getsize(caminho) // 1024} KB",
-            "url": f"https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/{caminho.replace(chr(92), '/')}"
+            "url": f"{BASE_URL}/{caminho.replace(chr(92), '/')}",
+            "docs": f"{BASE_URL}/libs/{lib_id}/docs.md"
         }
     except Exception as e:
         print(f"Erro ao ler {caminho}: {e}")
