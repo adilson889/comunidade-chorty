@@ -5,7 +5,7 @@
   "autor": "comunidade-chorty",
   "descricao": "Estrutura de Dados — SQL em português puro. SELECT, INSERT, UPDATE, DELETE, tabelas, índices, transacções e mais.",
   "estilos": "",
-  "scripts": "
+  "scripts": " 
 window.ed = {
   // ── OPERADORES ──────────────────────────
   igual: function(v) { return { op: '=', valor: v }; },
