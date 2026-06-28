@@ -1,5 +1,15 @@
 [
   {
+    "id": "estrutura.dados",
+    "nome": "estrutura.dados",
+    "alias": "ed",
+    "versao": "1.0",
+    "autor": "comunidade-chorty",
+    "descricao": "Estrutura de Dados — SQL em português puro. SELECT, INSERT, UPDATE, DELETE, tabelas, índices, transacções e mais.",
+    "tamanho": "9 KB",
+    "url": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/estrutura/dados/1.0.chorty-lib"
+  },
+  {
     "id": "teste.basico",
     "nome": "Teste Básico",
     "alias": "tb",
