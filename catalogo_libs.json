@@ -8,7 +8,7 @@
     "descricao": "Autenticacao completa — registo, login, sessao com localStorage.",
     "tamanho": "2 KB",
     "url": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/autenticacao/1.0.chorty-lib",
-    "docs": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/autenticacao/docs.md"
+    "docs": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/autenticacao/doc.md"
   },
   {
     "id": "estrutura.dados",
@@ -19,7 +19,7 @@
     "descricao": "Estrutura de Dados — SQL em português puro. SELECT, INSERT, UPDATE, DELETE, tabelas, índices, transacções e mais.",
     "tamanho": "9 KB",
     "url": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/estrutura/dados/1.0.chorty-lib",
-    "docs": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/estrutura.dados/docs.md"
+    "docs": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/estrutura/dados/doc.md"
   },
   {
     "id": "teste.basico",
@@ -30,6 +30,6 @@
     "descricao": "Biblioteca de teste.",
     "tamanho": "0 KB",
     "url": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/teste/basico/1.0.chorty-lib",
-    "docs": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/teste.basico/docs.md"
+    "docs": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/teste/basico/doc.md"
   }
 ]
