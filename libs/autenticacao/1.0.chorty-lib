@@ -1,0 +1,20 @@
+{
+  "id": "autenticacao",
+  "alias": "au",
+  "versao": "1.0",
+  "autor": "comunidade-chorty",
+  "descricao": "Autenticacao completa — registo, login, sessao com localStorage.",
+  "estilos": "",
+  "scripts": "window.au={mapa:function(obj){return obj;},registar:function(email,senha,nome){var users=JSON.parse(localStorage.getItem('au_users')||'{}');if(users[email])return{sucesso:false,erro:'Email ja registado.'};users[email]={email:email,senha:senha,nome:nome||email,data:new Date().toISOString()};localStorage.setItem('au_users',JSON.stringify(users));return{sucesso:true,mensagem:'Conta criada com sucesso.'};},entrar:function(email,senha){var users=JSON.parse(localStorage.getItem('au_users')||'{}');var u=users[email];if(!u)return{sucesso:false,erro:'Email nao encontrado.'};if(u.senha!==senha)return{sucesso:false,erro:'Senha incorreta.'};localStorage.setItem('au_sessao',JSON.stringify({email:email,nome:u.nome,data:new Date().toISOString()}));return{sucesso:true,nome:u.nome,email:email};},sair:function(){localStorage.removeItem('au_sessao');},estaLogado:function(){return localStorage.getItem('au_sessao')!==null;},nome:function(){var s=localStorage.getItem('au_sessao');if(!s)return'';return JSON.parse(s).nome||'';},email:function(){var s=localStorage.getItem('au_sessao');if(!s)return'';return JSON.parse(s).email||'';},utilizador:function(){var s=localStorage.getItem('au_sessao');if(!s)return null;var dados=JSON.parse(s);var users=JSON.parse(localStorage.getItem('au_users')||'{}');return users[dados.email]||null;}};",
+  "componentes": {},
+  "funcoes": {
+    "mapa": {"params": ["obj"], "descricao": "Retorna o objeto", "retorna": "mapa"},
+    "registar": {"params": ["email", "senha", "nome"], "descricao": "Regista um novo utilizador", "retorna": "mapa"},
+    "entrar": {"params": ["email", "senha"], "descricao": "Inicia sessao e retorna dados do utilizador", "retorna": "mapa"},
+    "sair": {"params": [], "descricao": "Termina a sessao atual", "retorna": "vazio"},
+    "estaLogado": {"params": [], "descricao": "Verifica se ha uma sessao ativa", "retorna": "logico"},
+    "nome": {"params": [], "descricao": "Nome do utilizador da sessao", "retorna": "texto"},
+    "email": {"params": [], "descricao": "Email do utilizador da sessao", "retorna": "texto"},
+    "utilizador": {"params": [], "descricao": "Dados completos do utilizador da sessao", "retorna": "mapa"}
+  }
+}
