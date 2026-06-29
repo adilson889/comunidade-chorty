@@ -87,35 +87,39 @@ ft:secao familia="inter" tamanho=16 fundo="azul_claro"
 fim
 ```
 
-Atributos disponiveis
+#. Atributos disponíveis 
 
-Todos os componentes aceitam estes atributos. Nenhum e obrigatorio.
+| Atributo | Valores | Padrão |
+|----------|---------|--------|
+| `familia` | `"inter"`, `"poppins"`, `"mono"`, `"serif"`, `"sans"`, `"elegante"`, `"titulo"`, `"manuscrita"`, `"decorativa"`, `"padrao"` | `"padrao"` |
+| `tamanho` | numero (px) | `16` |
+| `cor` | nome ou hex | `"#1e293b"` |
+| `peso` | `"fino"`, `"normal"`, `"medio"`, `"semi_negrito"`, `"negrito"`, `"extra_negrito"` | `"normal"` |
+| `alinhar` | `"esquerda"`, `"centro"`, `"direita"`, `"justificado"` | `"esquerda"` |
+| `estilo` | `"normal"`, `"italico"`, `"obliquo"` | `"normal"` |
+| `orientacao` | `"horizontal"`, `"vertical"`, `"obliquo"` | `"horizontal"` |
+| `angulo` | numero (graus) | `0` |
+| `ajuste` | `"canto"`, `"centro"`, `"esquerda"`, `"direita"` | `"esquerda"` |
+| `fundo` | nome ou hex | transparente |
 
-Atributo Valores Padrao
-familia "inter", "poppins", "mono", "serif", "sans", "elegante", "titulo", "manuscrita", "decorativa", "padrao" "padrao"
-tamanho numero (px) 16
-cor nome ou hex "#1e293b"
-peso "fino", "normal", "medio", "semi_negrito", "negrito", "extra_negrito" "normal"
-alinhar "esquerda", "centro", "direita", "justificado" "esquerda"
-estilo "normal", "italico", "obliquo" "normal"
-orientacao "horizontal", "vertical", "obliquo" "horizontal"
-angulo numero (graus) 0
-ajuste "canto", "centro", "esquerda", "direita" "esquerda"
-fundo nome ou hex transparente
+---
 
-Fontes disponiveis
+**Fontes disponíveis**
 
-Valor Fonte
-"inter" Inter (moderna, limpa)
-"poppins" Poppins (arredondada)
-"mono" JetBrains Mono (codigo)
-"serif" Times New Roman
-"sans" Arial / System UI
-"elegante" Playfair Display
-"titulo" Bebas Neue
-"manuscrita" Caveat
-"decorativa" Pacifico
-"padrao" Fonte do sistema
+| Valor | Fonte |
+|-------|-------|
+| `"inter"` | Inter (moderna, limpa) |
+| `"poppins"` | Poppins (arredondada) |
+| `"mono"` | JetBrains Mono (codigo) |
+| `"serif"` | Times New Roman |
+| `"sans"` | Arial / System UI |
+| `"elegante"` | Playfair Display |
+| `"titulo"` | Bebas Neue |
+| `"manuscrita"` | Caveat |
+| `"decorativa"` | Pacifico |
+| `"padrao"` | Fonte do sistema |
+
+
 
 Uso completo
 
