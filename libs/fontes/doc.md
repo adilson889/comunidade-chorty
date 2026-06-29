@@ -1,9 +1,9 @@
-  
+
 ## Fontes (ft)
 
 ## Conceito
 
-A biblioteca `fontes` permite controlar toda a tipografia da aplicacao — cores, tamanhos, estilos, familias, orientacao, posicao e ajuste. Tudo em portugues puro, com valores semanticos faceis de lembrar.
+A biblioteca `fontes` fornece componentes de texto com tipografia avancada. Cada componente aceita atributos como `familia`, `tamanho`, `cor`, `peso`, `alinhar`, `estilo`, `orientacao` e `ajuste`. Todos os atributos sao opcionais e tem valores padrao.
 
 ## Instalacao
 
@@ -11,231 +11,134 @@ A biblioteca `fontes` permite controlar toda a tipografia da aplicacao — cores
 usar biblioteca fontes ft
 ```
 
-Cores
+Componentes
 
-Define a cor do texto. Aceita nomes semanticos, hexadecimal, RGB e HSL.
+ft:titulo
 
-Na UI (dois pontos)
-
-```chorty
-ft:cor = "azul"
-ft:cor = "#2563eb"
-ft:cor = "rgb(37,99,235)"
-ft:cor = "hsl(221,83%,53%)"
-ft:cor = "vermelho"
-ft:cor = "verde"
-ft:cor = "cinza"
-```
-
-Na logica (ponto)
+Titulo de primeiro nivel.
 
 ```chorty
-ft.cor = "azul"
+ft:titulo "Ola Mundo"
+ft:titulo "Ola Mundo" familia="inter" tamanho=32 cor="azul" peso="negrito" alinhar="centro"
 ```
 
-Tamanho
+ft:subtitulo
 
-Define o tamanho da fonte em pixels ou com valores predefinidos.
-
-Na UI
+Titulo de segundo nivel.
 
 ```chorty
-ft:tamanho = 24
-ft:tamanho = "grande"
-ft:tamanho = "pequeno"
-ft:tamanho = "medio"
+ft:subtitulo "Descricao"
+ft:subtitulo "Descricao" familia="serif" tamanho=20 cor="cinza"
 ```
 
-Na logica
+ft:texto
+
+Paragrafo de texto.
 
 ```chorty
-ft.tamanho = 18
-ft.aumentar(2)
-ft.diminuir(2)
+ft:texto "Conteudo do paragrafo"
+ft:texto "Conteudo" familia="mono" tamanho=14 estilo="italico"
 ```
 
-Estilo
+ft:badge
 
-Define o estilo da fonte.
-
-Na UI
+Etiqueta estilizada.
 
 ```chorty
-ft:estilo = "normal"
-ft:estilo = "italico"
-ft:estilo = "obliquo"
+ft:badge "Novo" cor="branco" fundo="azul"
+ft:badge "Promocao" familia="titulo" tamanho=12 cor="branco" fundo="vermelho"
 ```
 
-Familia
+ft:botao
 
-Define a familia tipografica. Inclui fontes Google e fontes do sistema.
-
-Na UI
+Botao com tipografia personalizada.
 
 ```chorty
-ft:familia = "inter"
-ft:familia = "poppins"
-ft:familia = "mono"
-ft:familia = "serif"
-ft:familia = "sans"
-ft:familia = "elegante"
-ft:familia = "titulo"
-ft:familia = "manuscrita"
-ft:familia = "decorativa"
-ft:familia = "padrao"
+ft:botao "Entrar" familia="inter" tamanho=16 cor="branco" fundo="verde" peso="negrito"
 ```
 
-| Valor | Fonte |
-|-------|-------|
-| `"inter"` | Inter (moderna, limpa) |
-| `"poppins"` | Poppins (arredondada) |
-| `"mono"` | JetBrains Mono (codigo) |
-| `"serif"` | Times New Roman |
-| `"sans"` | Arial / System UI |
-| `"elegante"` | Playfair Display |
-| `"titulo"` | Bebas Neue |
-| `"manuscrita"` | Caveat |
-| `"decorativa"` | Pacifico |
-| `"padrao"` | Fonte do sistema |
-Peso
+ft:entrada
 
-Define a espessura da fonte.
-
-Na UI
+Campo de entrada de texto.
 
 ```chorty
-ft:peso = "fino"
-ft:peso = "normal"
-ft:peso = "medio"
-ft:peso = "semi_negrito"
-ft:peso = "negrito"
-ft:peso = "extra_negrito"
+ft:entrada placeholder="Email" familia="inter" tamanho=14
 ```
 
-Alinhamento
+ft:grupo
 
-Define o alinhamento horizontal do texto.
-
-Na UI
+Container de agrupamento com tipografia.
 
 ```chorty
-ft:alinhar = "esquerda"
-ft:alinhar = "centro"
-ft:alinhar = "direita"
-ft:alinhar = "justificado"
+ft:grupo familia="poppins" tamanho=16 alinhar="centro"
+  ft:titulo "Agrupado"
+  ft:texto "Conteudo dentro do grupo"
+fim
 ```
 
-Orientacao
+ft:secao
 
-Define a direcao do texto.
-
-Na UI
+Seccao com tipografia e fundo personalizavel.
 
 ```chorty
-ft:orientacao = "horizontal"
-ft:orientacao = "vertical"
-ft:orientacao = "obliquo"
-ft:angulo = 45
-ft:angulo = -15
+ft:secao familia="inter" tamanho=16 fundo="azul_claro"
+  ft:titulo "Seccao Personalizada"
+  ft:texto "Com fundo e fonte propria"
+fim
 ```
 
-Valor Descricao
-"horizontal" Texto normal da esquerda para a direita
-"vertical" Texto de cima para baixo
-"obliquo" Texto inclinado (15 graus por padrao)
-ft:angulo = 45 Angulo personalizado em graus
+Atributos disponiveis
 
-Posicao
+Todos os componentes aceitam estes atributos. Nenhum e obrigatorio.
 
-Define a posicao do elemento de texto dentro do espaco disponivel.
+Atributo Valores Padrao
+familia "inter", "poppins", "mono", "serif", "sans", "elegante", "titulo", "manuscrita", "decorativa", "padrao" "padrao"
+tamanho numero (px) 16
+cor nome ou hex "#1e293b"
+peso "fino", "normal", "medio", "semi_negrito", "negrito", "extra_negrito" "normal"
+alinhar "esquerda", "centro", "direita", "justificado" "esquerda"
+estilo "normal", "italico", "obliquo" "normal"
+orientacao "horizontal", "vertical", "obliquo" "horizontal"
+angulo numero (graus) 0
+ajuste "canto", "centro", "esquerda", "direita" "esquerda"
+fundo nome ou hex transparente
 
-Na UI
+Fontes disponiveis
 
-```chorty
-ft:posicao = "esquerda"
-ft:posicao = "centro"
-ft:posicao = "direita"
-```
+Valor Fonte
+"inter" Inter (moderna, limpa)
+"poppins" Poppins (arredondada)
+"mono" JetBrains Mono (codigo)
+"serif" Times New Roman
+"sans" Arial / System UI
+"elegante" Playfair Display
+"titulo" Bebas Neue
+"manuscrita" Caveat
+"decorativa" Pacifico
+"padrao" Fonte do sistema
 
-Ajuste
-
-Define como o texto ocupa o espaco disponivel.
-
-Na UI
-
-```chorty
-ft:ajuste = "canto"
-ft:ajuste = "centro"
-ft:ajuste = "esquerda"
-ft:ajuste = "direita"
-```
-
-Valor Descricao
-"canto" Texto distribuido de canto a canto
-"centro" Texto centralizado no espaco
-"esquerda" Alinhado a esquerda
-"direita" Alinhado a direita
-
-Uso completo na tela
+Uso completo
 
 ```chorty
 tela "Home"
 
-  ft:familia = "inter"
-  ft:tamanho = 18
-  ft:cor = "#1e293b"
-  ft:alinhar = "centro"
-  ft:peso = "normal"
+  ft:secao familia="inter" tamanho=18 cor="#1e293b" alinhar="centro"
 
-  cabecalho
-    titulo "Minha App"
-  fim
+    ft:titulo "Bem-vindo!" familia="titulo" tamanho=32 cor="azul" peso="extra_negrito"
 
-  secao espaco=24
+    ft:texto "Esta e uma descricao em italico." familia="inter" tamanho=16 cor="cinza" estilo="italico"
 
-    ft:familia = "titulo"
-    ft:tamanho = 32
-    ft:cor = "azul"
-    ft:peso = "extra_negrito"
-    titulo "Bem-vindo!"
+    ft:texto "Codigo fonte em mono." familia="mono" tamanho=14 cor="verde"
 
-    ft:familia = "inter"
-    ft:tamanho = 16
-    ft:cor = "cinza"
-    ft:estilo = "italico"
-    texto "Esta e uma descricao em italico."
+    ft:badge "Novo" cor="branco" fundo="azul"
 
-    ft:familia = "mono"
-    ft:tamanho = 14
-    ft:cor = "verde"
-    texto "Codigo fonte em mono."
+    ft:botao "Entrar" familia="inter" tamanho=16 cor="branco" fundo="verde" peso="negrito"
 
   fim
-
-fim
-```
-
-Exemplo com logica
-
-```chorty
-logica
-
-dados
-  textoImportante: texto = "Aviso!"
-  corActual: texto = "vermelho"
-fim
-
-funcao destacar()
-  ft.cor = corActual
-  ft.tamanho = 24
-  ft.peso = "negrito"
-  ft.alinhar = "centro"
-  mensagem(textoImportante)
-fim
 
 fim
 ```
 
 Resumo
 
-A biblioteca fontes oferece controlo tipografico completo em portugues. Todas as propriedades podem ser usadas na UI com ft:atributo = valor e na logica com ft.atributo = valor. As funcoes ft.aumentar() e ft.diminuir() permitem ajustes incrementais de tamanho.
+A biblioteca fontes oferece componentes de texto com tipografia avancada. Cada componente e usado com ft:nome e aceita atributos opcionais de estilo. Nao ha scripts, nao ha _aplicar(). Tudo e renderizado diretamente com estilos inline a partir dos templates do manifesto.
