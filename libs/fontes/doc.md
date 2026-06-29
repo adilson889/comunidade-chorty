@@ -1,4 +1,4 @@
-
+  
 ## Fontes (ft)
 
 ## Conceito
@@ -85,20 +85,18 @@ ft:familia = "decorativa"
 ft:familia = "padrao"
 ```
 
-Fontes disponiveis
-
-Valor Fonte
-"inter" Inter (moderna, limpa)
-"poppins" Poppins (arredondada)
-"mono" JetBrains Mono (codigo)
-"serif" Times New Roman
-"sans" Arial / System UI
-"elegante" Playfair Display
-"titulo" Bebas Neue
-"manuscrita" Caveat
-"decorativa" Pacifico
-"padrao" Fonte do sistema
-
+| Valor | Fonte |
+|-------|-------|
+| `"inter"` | Inter (moderna, limpa) |
+| `"poppins"` | Poppins (arredondada) |
+| `"mono"` | JetBrains Mono (codigo) |
+| `"serif"` | Times New Roman |
+| `"sans"` | Arial / System UI |
+| `"elegante"` | Playfair Display |
+| `"titulo"` | Bebas Neue |
+| `"manuscrita"` | Caveat |
+| `"decorativa"` | Pacifico |
+| `"padrao"` | Fonte do sistema |
 Peso
 
 Define a espessura da fonte.
