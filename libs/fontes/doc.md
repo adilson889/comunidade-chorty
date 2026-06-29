@@ -1,10 +1,11 @@
+
 ## Fontes (ft)
 
-Conceito
+## Conceito
 
-A biblioteca fontes permite controlar toda a tipografia da aplicacao — cores, tamanhos, estilos, familias, orientacao, posicao e ajuste. Tudo em portugues puro, com valores semanticos faceis de lembrar.
+A biblioteca `fontes` permite controlar toda a tipografia da aplicacao — cores, tamanhos, estilos, familias, orientacao, posicao e ajuste. Tudo em portugues puro, com valores semanticos faceis de lembrar.
 
-Instalacao
+## Instalacao
 
 ```chorty
 usar biblioteca fontes ft
@@ -32,8 +33,6 @@ Na logica (ponto)
 ft.cor = "azul"
 ```
 
----
-
 Tamanho
 
 Define o tamanho da fonte em pixels ou com valores predefinidos.
@@ -55,8 +54,6 @@ ft.aumentar(2)
 ft.diminuir(2)
 ```
 
----
-
 Estilo
 
 Define o estilo da fonte.
@@ -68,8 +65,6 @@ ft:estilo = "normal"
 ft:estilo = "italico"
 ft:estilo = "obliquo"
 ```
-
----
 
 Familia
 
@@ -104,8 +99,6 @@ Valor Fonte
 "decorativa" Pacifico
 "padrao" Fonte do sistema
 
----
-
 Peso
 
 Define a espessura da fonte.
@@ -121,8 +114,6 @@ ft:peso = "negrito"
 ft:peso = "extra_negrito"
 ```
 
----
-
 Alinhamento
 
 Define o alinhamento horizontal do texto.
@@ -135,8 +126,6 @@ ft:alinhar = "centro"
 ft:alinhar = "direita"
 ft:alinhar = "justificado"
 ```
-
----
 
 Orientacao
 
@@ -158,8 +147,6 @@ Valor Descricao
 "obliquo" Texto inclinado (15 graus por padrao)
 ft:angulo = 45 Angulo personalizado em graus
 
----
-
 Posicao
 
 Define a posicao do elemento de texto dentro do espaco disponivel.
@@ -171,8 +158,6 @@ ft:posicao = "esquerda"
 ft:posicao = "centro"
 ft:posicao = "direita"
 ```
-
----
 
 Ajuste
 
@@ -192,8 +177,6 @@ Valor Descricao
 "centro" Texto centralizado no espaco
 "esquerda" Alinhado a esquerda
 "direita" Alinhado a direita
-
----
 
 Uso completo na tela
 
@@ -234,8 +217,6 @@ tela "Home"
 fim
 ```
 
----
-
 Exemplo com logica
 
 ```chorty
@@ -256,8 +237,6 @@ fim
 
 fim
 ```
-
----
 
 Resumo
 
