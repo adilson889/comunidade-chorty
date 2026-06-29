@@ -3,13 +3,42 @@
   "alias": "ft",
   "versao": "1.0",
   "autor": "comunidade-chorty",
-  "descricao": "Biblioteca de tipografia completa — cores, tamanhos, estilos, familias, orientacao, posicao e ajuste. Fontes Google e do sistema.",
+  "descricao": "Componentes de texto com tipografia avancada — fontes Google, cores, tamanhos, estilos, orientacao, posicao e ajuste.",
   "estilos": "@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700;900&family=Bebas+Neue&family=Caveat:wght@400;700&family=Pacifico&display=swap');",
-  "scripts": "window.ft={_familia:'',_tamanho:16,_cor:'#1e293b',_estilo:'normal',_peso:'normal',_alinhar:'esquerda',_orientacao:'horizontal',_angulo:0,_posicao:'esquerda',_ajuste:'esquerda',_resolverFamilia:function(f){if(f==='inter')return'Inter';if(f==='poppins')return'Poppins';if(f==='mono')return'JetBrains Mono';if(f==='serif')return'Times New Roman';if(f==='sans')return'Arial';if(f==='elegante')return'Playfair Display';if(f==='titulo')return'Bebas Neue';if(f==='manuscrita')return'Caveat';if(f==='decorativa')return'Pacifico';if(f==='padrao')return'system-ui';return f;},cor:{get:function(){return this._cor;},set:function(v){this._cor=v;this._aplicar();}},tamanho:{get:function(){return this._tamanho;},set:function(v){if(typeof v==='number')this._tamanho=v;else if(v==='grande')this._tamanho=24;else if(v==='medio')this._tamanho=18;else if(v==='pequeno')this._tamanho=12;this._aplicar();}},estilo:{get:function(){return this._estilo;},set:function(v){this._estilo=v;this._aplicar();}},familia:{get:function(){return this._familia;},set:function(v){this._familia=v;this._aplicar();}},peso:{get:function(){return this._peso;},set:function(v){var p={'fino':'300','normal':'400','medio':'500','semi_negrito':'600','negrito':'700','extra_negrito':'900'};this._peso=p[v]||v;this._aplicar();}},alinhar:{get:function(){return this._alinhar;},set:function(v){this._alinhar=v;this._aplicar();}},orientacao:{get:function(){return this._orientacao;},set:function(v){this._orientacao=v;if(v==='obliquo')this._angulo=0;this._aplicar();}},angulo:{get:function(){return this._angulo;},set:function(v){this._angulo=v;this._orientacao='';this._aplicar();}},posicao:{get:function(){return this._posicao;},set:function(v){this._posicao=v;if(v==='centro')this._alinhar='center';else if(v==='direita')this._alinhar='right';else this._alinhar='left';this._aplicar();}},ajuste:{get:function(){return this._ajuste;},set:function(v){this._ajuste=v;if(v==='canto')this._alinhar='justify';else if(v==='centro')this._alinhar='center';else if(v==='direita')this._alinhar='right';else this._alinhar='left';this._aplicar();}},aumentar:function(v){this._tamanho+=v;this._aplicar();},diminuir:function(v){this._tamanho=Math.max(1,this._tamanho-v);this._aplicar();},aplicar:function(f){this._familia=f;this._aplicar();},_aplicar:function(){var el=document.getElementById('ch-root');if(!el)return;if(this._familia)el.style.fontFamily=this._resolverFamilia(this._familia)+',sans-serif';el.style.fontSize=this._tamanho+'px';el.style.color=this._cor;el.style.fontStyle=this._estilo;el.style.fontWeight=this._peso;el.style.textAlign=this._alinhar;if(this._orientacao==='vertical')el.style.writingMode='vertical-rl';else if(this._orientacao==='obliquo')el.style.transform='skewX(-15deg)';else if(this._angulo!==0)el.style.transform='rotate('+this._angulo+'deg)';else el.style.transform='';}};",
-  "componentes": {},
-  "funcoes": {
-    "aumentar": {"params": ["valor"], "descricao": "Aumenta o tamanho da fonte em px", "retorna": "vazio"},
-    "diminuir": {"params": ["valor"], "descricao": "Diminui o tamanho da fonte em px", "retorna": "vazio"},
-    "aplicar": {"params": ["familia"], "descricao": "Aplica uma familia de fonte", "retorna": "vazio"}
-  }
+  "scripts": "",
+  "componentes": {
+    "titulo": {
+      "template": "<h1 class='ft-titulo' style='font-family:{{familia}},sans-serif;font-size:{{tamanho}}px;color:{{cor}};font-weight:{{peso}};text-align:{{alinhar}};{{estilo_attr}}{{orientacao_attr}}{{ajuste_attr}}'>{{conteudo}}</h1>",
+      "atributos": ["familia", "tamanho", "cor", "peso", "alinhar", "estilo", "orientacao", "angulo", "ajuste", "conteudo"]
+    },
+    "subtitulo": {
+      "template": "<h2 class='ft-subtitulo' style='font-family:{{familia}},sans-serif;font-size:{{tamanho}}px;color:{{cor}};font-weight:{{peso}};text-align:{{alinhar}};{{estilo_attr}}{{orientacao_attr}}'>{{conteudo}}</h2>",
+      "atributos": ["familia", "tamanho", "cor", "peso", "alinhar", "estilo", "orientacao", "angulo", "conteudo"]
+    },
+    "texto": {
+      "template": "<p class='ft-texto' style='font-family:{{familia}},sans-serif;font-size:{{tamanho}}px;color:{{cor}};font-weight:{{peso}};text-align:{{alinhar}};{{estilo_attr}}{{orientacao_attr}}{{ajuste_attr}}'>{{conteudo}}</p>",
+      "atributos": ["familia", "tamanho", "cor", "peso", "alinhar", "estilo", "orientacao", "angulo", "ajuste", "conteudo"]
+    },
+    "badge": {
+      "template": "<span class='ft-badge' style='font-family:{{familia}},sans-serif;font-size:{{tamanho}}px;color:{{cor}};font-weight:{{peso}};background:{{fundo}};border-radius:999px;padding:4px 12px;'>{{conteudo}}</span>",
+      "atributos": ["familia", "tamanho", "cor", "peso", "fundo", "conteudo"]
+    },
+    "botao": {
+      "template": "<button class='ft-botao' style='font-family:{{familia}},sans-serif;font-size:{{tamanho}}px;color:{{cor}};font-weight:{{peso}};background:{{fundo}};border:none;border-radius:10px;padding:10px 20px;cursor:pointer;'>{{conteudo}}</button>",
+      "atributos": ["familia", "tamanho", "cor", "peso", "fundo", "conteudo"]
+    },
+    "entrada": {
+      "template": "<input class='ft-entrada' style='font-family:{{familia}},sans-serif;font-size:{{tamanho}}px;color:{{cor}};border:1px solid #e2e8f0;border-radius:8px;padding:10px 12px;' placeholder='{{placeholder}}'>",
+      "atributos": ["familia", "tamanho", "cor", "placeholder"]
+    },
+    "grupo": {
+      "template": "<div class='ft-grupo' style='font-family:{{familia}},sans-serif;font-size:{{tamanho}}px;color:{{cor}};text-align:{{alinhar}};{{orientacao_attr}}'>{{conteudo}}</div>",
+      "atributos": ["familia", "tamanho", "cor", "alinhar", "orientacao", "angulo", "conteudo"]
+    },
+    "secao": {
+      "template": "<div class='ft-secao' style='font-family:{{familia}},sans-serif;font-size:{{tamanho}}px;color:{{cor}};padding:24px;{{fundo_attr}}'>{{conteudo}}</div>",
+      "atributos": ["familia", "tamanho", "cor", "fundo", "conteudo"]
+    }
+  },
+  "funcoes": {}
 }
