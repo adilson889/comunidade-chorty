@@ -1,21 +1,21 @@
 
-## Graficos (gf)
+# Gráficos (gf)
 
 ## Conceito
 
-A biblioteca `graficos` renderiza graficos SVG nativos — barras, linhas, pizza, area e horizontais. Sem dependencias externas. Os dados sao passados como `rotulos` e `series` em formato JSON.
+A biblioteca `graficos` renderiza gráficos SVG nativos — barras, linhas, pizza, área e horizontais. Sem dependências externas. Os dados são passados como `rótulos` e `séries` em formato JSON.
 
-## Instalacao
+## Instalação
 
 ```chorty
 usar biblioteca graficos gf
 ```
 
-Componente
+## Componente
 
-gf:grafico
+### gf:grafico
 
-Componente unico que renderiza o tipo de grafico especificado.
+Componente único que renderiza o tipo de gráfico especificado.
 
 ```chorty
 gf:grafico
@@ -29,37 +29,38 @@ gf:grafico
   sombra="media"
 ```
 
-Atributos
+## Atributos
 
-Atributo Tipo Valores Padrao Descricao
-tipo texto "barras", "linhas", "pizza", "area", "horizontal" "barras" Tipo de grafico
-titulo texto — vazio Titulo exibido acima do grafico
-altura numero — 300 Altura em pixels
-cor texto nomes semanticos ou hex "azul" Cor principal (graficos de 1 serie)
-rotulos texto JSON array [] Rotulos do eixo X
-series texto JSON array [] Series de dados com nome e valores
-espaco numero — — Padding interno
-margem numero — — Margem externa
-sombra texto "leve", "media", "forte" — Sombra do grafico
+| Atributo | Tipo | Valores | Padrão | Descrição |
+|----------|------|---------|--------|-----------|
+| `tipo` | texto | `"barras"`, `"linhas"`, `"pizza"`, `"area"`, `"horizontal"` | `"barras"` | Tipo de gráfico |
+| `titulo` | texto | — | vazio | Título exibido acima do gráfico |
+| `altura` | número | — | `300` | Altura em pixels |
+| `cor` | texto | nomes semânticos ou hex | `"azul"` | Cor principal (gráficos de 1 série) |
+| `rotulos` | texto | JSON array | `[]` | Rótulos do eixo X |
+| `series` | texto | JSON array | `[]` | Séries de dados com nome e valores |
+| `espaco` | número | — | — | Padding interno |
+| `margem` | número | — | — | Margem externa |
+| `sombra` | texto | `"leve"`, `"media"`, `"forte"` | — | Sombra do gráfico |
 
-Tipos de grafico
+## Tipos de Gráfico
 
-gf:grafico tipo="barras"
+### gf:grafico tipo="barras"
 
-Barras verticais agrupadas. Suporta multiplas series.
+Barras verticais agrupadas. Suporta múltiplas séries.
 
 ```chorty
 gf:grafico
   tipo="barras"
-  titulo="Vendas por Mes"
+  titulo="Vendas por Mês"
   altura=300
   rotulos="['Jan','Fev','Mar','Abr','Mai','Jun']"
   series="[{nome:'Produto A',valores:[120,200,150,80,180,220]},{nome:'Produto B',valores:[80,95,110,70,100,130]}]"
 ```
 
-gf:grafico tipo="linhas"
+### gf:grafico tipo="linhas"
 
-Linhas conectadas com pontos. Ideal para tendencias.
+Linhas conectadas com pontos. Ideal para tendências.
 
 ```chorty
 gf:grafico
@@ -70,33 +71,33 @@ gf:grafico
   series="[{nome:'Clientes',valores:[150,280,450,620,890]}]"
 ```
 
-gf:grafico tipo="pizza"
+### gf:grafico tipo="pizza"
 
-Grafico circular. Usa apenas a primeira serie.
+Gráfico circular. Usa apenas a primeira série.
 
 ```chorty
 gf:grafico
   tipo="pizza"
-  titulo="Distribuicao Regional"
+  titulo="Distribuição Regional"
   altura=300
   rotulos="['Luanda','Benguela','Huila','Huambo','Outros']"
-  series="[{nome:'Regioes',valores:[35,25,20,15,5]}]"
+  series="[{nome:'Regiões',valores:[35,25,20,15,5]}]"
 ```
 
-gf:grafico tipo="area"
+### gf:grafico tipo="area"
 
-Area preenchida. Ideal para volumes.
+Área preenchida. Ideal para volumes.
 
 ```chorty
 gf:grafico
   tipo="area"
-  titulo="Sessoes Mensais"
+  titulo="Sessões Mensais"
   altura=300
   rotulos="['Jan','Fev','Mar','Abr','Mai']"
-  series="[{nome:'Sessoes',valores:[1200,2000,1500,1800,2200]}]"
+  series="[{nome:'Sessões',valores:[1200,2000,1500,1800,2200]}]"
 ```
 
-gf:grafico tipo="horizontal"
+### gf:grafico tipo="horizontal"
 
 Barras horizontais com valores.
 
@@ -105,19 +106,33 @@ gf:grafico
   tipo="horizontal"
   titulo="Top Categorias"
   altura=300
-  rotulos="['Tecnologia','Saude','Educacao','Financas','Energia']"
+  rotulos="['Tecnologia','Saúde','Educação','Finanças','Energia']"
   series="[{nome:'Investimento',valores:[850,620,480,350,290]}]"
 ```
 
-Cores disponiveis
+## Cores Disponíveis
 
-azul, verde, vermelho, amarelo, laranja, roxo, rosa, ciano, turquesa, indigo, cinza, preto, branco
+| Cor | Valor |
+|-----|-------|
+| Azul | `"azul"` |
+| Verde | `"verde"` |
+| Vermelho | `"vermelho"` |
+| Amarelo | `"amarelo"` |
+| Laranja | `"laranja"` |
+| Roxo | `"roxo"` |
+| Rosa | `"rosa"` |
+| Ciano | `"ciano"` |
+| Turquesa | `"turquesa"` |
+| Índigo | `"indigo"` |
+| Cinza | `"cinza"` |
+| Preto | `"preto"` |
+| Branco | `"branco"` |
 
-Para multiplas series, as cores sao atribuidas automaticamente a partir da paleta.
+Para múltiplas séries, as cores são atribuídas automaticamente a partir da paleta.
 
-Estilo visual
+## Estilo Visual
 
-O grafico aceita atributos de estilo do ResolvedorEstilo nativo:
+O gráfico aceita atributos de estilo do ResolvedorEstilo nativo:
 
 ```chorty
 gf:grafico
@@ -131,7 +146,7 @@ gf:grafico
   series="[{nome:'X',valores:[10,20,30]}]"
 ```
 
-Exemplo completo
+## Exemplo Completo
 
 ```chorty
 app "Dashboard Vendas"
@@ -166,20 +181,20 @@ tela "Dashboard"
 
   secao espaco=24
 
-    titulo "Distribuicao"
+    titulo "Distribuição"
 
     gf:grafico
       tipo="pizza"
-      titulo="Por Regiao"
+      titulo="Por Região"
       altura=300
       rotulos="['Luanda','Benguela','Huila','Huambo','Outros']"
-      series="[{nome:'Regioes',valores:[35,25,20,15,5]}]"
+      series="[{nome:'Regiões',valores:[35,25,20,15,5]}]"
 
   fim
 
 fim
 ```
 
-Resumo
+## Resumo
 
-A biblioteca graficos oferece 5 tipos de graficos SVG nativos. Os dados sao passados como rotulos e series em formato JSON. Suporta atributos de estilo do ResolvedorEstilo nativo. Sem dependencias externas.
+A biblioteca `graficos` oferece 5 tipos de gráficos SVG nativos. Os dados são passados como rótulos e séries em formato JSON. Suporta atributos de estilo do ResolvedorEstilo nativo. Sem dependências externas.
