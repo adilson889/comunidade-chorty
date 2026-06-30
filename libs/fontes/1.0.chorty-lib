@@ -3,42 +3,46 @@
   "alias": "ft",
   "versao": "1.0",
   "autor": "comunidade-chorty",
-  "descricao": "Componentes de texto com tipografia avancada — fontes Google, cores, tamanhos, estilos, orientacao, posicao e ajuste.",
-  "estilos": "@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700;900&family=Bebas+Neue&family=Caveat:wght@400;700&family=Pacifico&display=swap');",
-  "scripts": "window.ft={_padrao:{familia:'padrao',tamanho:16,cor:'#1e293b',peso:'normal',alinhar:'esquerda',estilo:'normal',orientacao:'horizontal',angulo:0,ajuste:'esquerda',fundo:'transparente'},_resolverFamilia:function(f){var m={'inter':'Inter','poppins':'Poppins','mono':'JetBrains Mono','serif':'Times New Roman','sans':'Arial','elegante':'Playfair Display','titulo':'Bebas Neue','manuscrita':'Caveat','decorativa':'Pacifico','padrao':'system-ui'};return m[f]||f;},_resolverPeso:function(p){var m={'fino':'300','normal':'400','medio':'500','semi_negrito':'600','negrito':'700','extra_negrito':'900'};return m[p]||p;},_estiloAttr:function(e){if(e==='italico')return'font-style:italic;';if(e==='obliquo')return'font-style:oblique;';return'';},_orientacaoAttr:function(o,a){if(o==='vertical')return'writing-mode:vertical-rl;';if(o==='obliquo')return'transform:skewX(-15deg);';if(a&&a!==0)return'transform:rotate('+a+'deg);';return'';},_ajusteAttr:function(a){if(a==='canto')return'text-align:justify;';if(a==='centro')return'text-align:center;';if(a==='direita')return'text-align:right;';return'text-align:left;';},_fundoAttr:function(f){if(!f||f==='transparente')return'';return'background:'+f+';';}};",
+  "descricao": "Componentes de texto com tipografia avançada — fontes Google, cores, tamanhos, pesos e estilos.",
+
+  "estilos": "@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700;900&family=Bebas+Neue&family=Caveat:wght@400;700&family=Pacifico&display=swap'); .ft-familia-inter{font-family:'Inter',sans-serif;} .ft-familia-poppins{font-family:'Poppins',sans-serif;} .ft-familia-mono{font-family:'JetBrains Mono',monospace;} .ft-familia-serif{font-family:'Times New Roman',serif;} .ft-familia-sans{font-family:Arial,sans-serif;} .ft-familia-elegante{font-family:'Playfair Display',serif;} .ft-familia-titulo{font-family:'Bebas Neue',sans-serif;} .ft-familia-manuscrita{font-family:'Caveat',cursive;} .ft-familia-decorativa{font-family:'Pacifico',cursive;} .ft-familia-padrao{font-family:system-ui,sans-serif;} .ft-peso-fino{font-weight:300;} .ft-peso-normal{font-weight:400;} .ft-peso-medio{font-weight:500;} .ft-peso-semi_negrito{font-weight:600;} .ft-peso-negrito{font-weight:700;} .ft-peso-extra_negrito{font-weight:900;} .ft-alinhar-esquerda{text-align:left;} .ft-alinhar-centro{text-align:center;} .ft-alinhar-direita{text-align:right;} .ft-alinhar-justificado{text-align:justify;} .ft-estilo-italico{font-style:italic;} .ft-estilo-obliquo{font-style:oblique;} .ft-cor-azul{color:#2563eb;} .ft-cor-verde{color:#16a34a;} .ft-cor-vermelho{color:#dc2626;} .ft-cor-amarelo{color:#ca8a04;} .ft-cor-roxo{color:#7c3aed;} .ft-cor-cinza{color:#64748b;} .ft-cor-preto{color:#0f172a;} .ft-cor-branco{color:#ffffff;} .ft-fundo-azul{background:#2563eb;} .ft-fundo-verde{background:#16a34a;} .ft-fundo-vermelho{background:#dc2626;} .ft-fundo-amarelo{background:#ca8a04;} .ft-fundo-roxo{background:#7c3aed;} .ft-fundo-cinza{background:#64748b;} .ft-fundo-preto{background:#0f172a;} .ft-fundo-branco{background:#ffffff;} .ft-fundo-azul_claro{background:#dbeafe;} .ft-fundo-transparente{background:transparent;} .ft-titulo{margin:0 0 12px;} .ft-subtitulo{margin:0 0 10px;} .ft-texto{margin:0 0 12px;line-height:1.5;} .ft-badge{display:inline-block;border-radius:999px;padding:4px 12px;} .ft-botao{border:none;border-radius:10px;padding:10px 20px;cursor:pointer;} .ft-entrada{border:1px solid #e2e8f0;border-radius:8px;padding:10px 12px;} .ft-grupo{display:block;} .ft-secao{padding:24px;border-radius:12px;}",
+
+  "scripts": "",
+
   "componentes": {
     "titulo": {
-      "template": "<h1 class='ft-titulo' style='font-family:{{familia}},sans-serif;font-size:{{tamanho}}px;color:{{cor}};font-weight:{{peso}};{{alinhar_attr}}{{estilo_attr}}{{orientacao_attr}}'>{{conteudo}}</h1>",
-      "atributos": ["familia", "tamanho", "cor", "peso", "alinhar", "estilo", "orientacao", "angulo", "conteudo"]
+      "template": "<h1 class='ft-titulo ft-familia-{{familia}} ft-peso-{{peso}} ft-alinhar-{{alinhar}} ft-estilo-{{estilo}} ft-cor-{{cor}}' style='font-size:{{tamanho}}px;'>{{conteudo}}</h1>",
+      "atributos": ["familia", "tamanho", "cor", "peso", "alinhar", "estilo", "conteudo"]
     },
     "subtitulo": {
-      "template": "<h2 class='ft-subtitulo' style='font-family:{{familia}},sans-serif;font-size:{{tamanho}}px;color:{{cor}};font-weight:{{peso}};{{alinhar_attr}}{{estilo_attr}}{{orientacao_attr}}'>{{conteudo}}</h2>",
-      "atributos": ["familia", "tamanho", "cor", "peso", "alinhar", "estilo", "orientacao", "angulo", "conteudo"]
+      "template": "<h2 class='ft-subtitulo ft-familia-{{familia}} ft-peso-{{peso}} ft-alinhar-{{alinhar}} ft-estilo-{{estilo}} ft-cor-{{cor}}' style='font-size:{{tamanho}}px;'>{{conteudo}}</h2>",
+      "atributos": ["familia", "tamanho", "cor", "peso", "alinhar", "estilo", "conteudo"]
     },
     "texto": {
-      "template": "<p class='ft-texto' style='font-family:{{familia}},sans-serif;font-size:{{tamanho}}px;color:{{cor}};font-weight:{{peso}};{{alinhar_attr}}{{estilo_attr}}{{orientacao_attr}}'>{{conteudo}}</p>",
-      "atributos": ["familia", "tamanho", "cor", "peso", "alinhar", "estilo", "orientacao", "angulo", "conteudo"]
+      "template": "<p class='ft-texto ft-familia-{{familia}} ft-peso-{{peso}} ft-alinhar-{{alinhar}} ft-estilo-{{estilo}} ft-cor-{{cor}}' style='font-size:{{tamanho}}px;'>{{conteudo}}</p>",
+      "atributos": ["familia", "tamanho", "cor", "peso", "alinhar", "estilo", "conteudo"]
     },
     "badge": {
-      "template": "<span class='ft-badge' style='font-family:{{familia}},sans-serif;font-size:{{tamanho}}px;color:{{cor}};font-weight:{{peso}};{{fundo_attr}}border-radius:999px;padding:4px 12px;display:inline-block;'>{{conteudo}}</span>",
+      "template": "<span class='ft-badge ft-familia-{{familia}} ft-peso-{{peso}} ft-cor-{{cor}} ft-fundo-{{fundo}}' style='font-size:{{tamanho}}px;'>{{conteudo}}</span>",
       "atributos": ["familia", "tamanho", "cor", "peso", "fundo", "conteudo"]
     },
     "botao": {
-      "template": "<button class='ft-botao' style='font-family:{{familia}},sans-serif;font-size:{{tamanho}}px;color:{{cor}};font-weight:{{peso}};{{fundo_attr}}border:none;border-radius:10px;padding:10px 20px;cursor:pointer;' onclick='{{acao}}'>{{conteudo}}</button>",
+      "template": "<button class='ft-botao ft-familia-{{familia}} ft-peso-{{peso}} ft-cor-{{cor}} ft-fundo-{{fundo}}' style='font-size:{{tamanho}}px;' onclick='{{acao}}'>{{conteudo}}</button>",
       "atributos": ["familia", "tamanho", "cor", "peso", "fundo", "acao", "conteudo"]
     },
     "entrada": {
-      "template": "<input class='ft-entrada' style='font-family:{{familia}},sans-serif;font-size:{{tamanho}}px;color:{{cor}};border:1px solid #e2e8f0;border-radius:8px;padding:10px 12px;' placeholder='{{placeholder}}'>",
+      "template": "<input class='ft-entrada ft-familia-{{familia}}' style='font-size:{{tamanho}}px;color:{{cor}};' placeholder='{{placeholder}}'>",
       "atributos": ["familia", "tamanho", "cor", "placeholder"]
     },
     "grupo": {
-      "template": "<div class='ft-grupo' style='font-family:{{familia}},sans-serif;font-size:{{tamanho}}px;color:{{cor}};{{alinhar_attr}}{{orientacao_attr}}'>{{conteudo}}</div>",
-      "atributos": ["familia", "tamanho", "cor", "alinhar", "orientacao", "angulo", "conteudo"]
+      "template": "<div class='ft-grupo ft-familia-{{familia}} ft-alinhar-{{alinhar}} ft-cor-{{cor}}' style='font-size:{{tamanho}}px;'>{{conteudo}}</div>",
+      "atributos": ["familia", "tamanho", "cor", "alinhar", "conteudo"]
     },
     "secao": {
-      "template": "<div class='ft-secao' style='font-family:{{familia}},sans-serif;font-size:{{tamanho}}px;color:{{cor}};padding:24px;{{fundo_attr}}'>{{conteudo}}</div>",
+      "template": "<div class='ft-secao ft-familia-{{familia}} ft-cor-{{cor}} ft-fundo-{{fundo}}' style='font-size:{{tamanho}}px;'>{{conteudo}}</div>",
       "atributos": ["familia", "tamanho", "cor", "fundo", "conteudo"]
     }
   },
+
   "funcoes": {}
 }
