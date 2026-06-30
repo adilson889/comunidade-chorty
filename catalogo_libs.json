@@ -33,6 +33,17 @@
     "docs": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/fontes/doc.md"
   },
   {
+    "id": "graficos",
+    "nome": "graficos",
+    "alias": "gf",
+    "versao": "1.0",
+    "autor": "comunidade-chorty",
+    "descricao": "Graficos SVG nativos — barras, linhas, pizza, area, horizontais e empilhados. Renderizacao pura sem dependencias externas.",
+    "tamanho": "7 KB",
+    "url": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/graficos/1.0.chorty-lib",
+    "docs": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/graficos/doc.md"
+  },
+  {
     "id": "teste.basico",
     "nome": "Teste Básico",
     "alias": "tb",
