@@ -38,8 +38,8 @@
     "alias": "gf",
     "versao": "1.0",
     "autor": "comunidade-chorty",
-    "descricao": "Graficos SVG nativos — barras, linhas, pizza, area, horizontais e empilhados. Renderizacao pura sem dependencias externas.",
-    "tamanho": "7 KB",
+    "descricao": "Graficos SVG nativos — barras, linhas, pizza. Renderizacao pura sem dependencias externas.",
+    "tamanho": "2 KB",
     "url": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/graficos/1.0.chorty-lib",
     "docs": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/graficos/doc.md"
   },
