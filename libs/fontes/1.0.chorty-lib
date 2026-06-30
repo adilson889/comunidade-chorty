@@ -5,34 +5,34 @@
   "autor": "comunidade-chorty",
   "descricao": "Componentes de texto com tipografia avancada — fontes Google, cores, tamanhos, estilos, orientacao, posicao e ajuste.",
   "estilos": "@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700;900&family=Bebas+Neue&family=Caveat:wght@400;700&family=Pacifico&display=swap');",
-  "scripts": "",
+  "scripts": "window.ft={_padrao:{familia:'padrao',tamanho:16,cor:'#1e293b',peso:'normal',alinhar:'esquerda',estilo:'normal',orientacao:'horizontal',angulo:0,ajuste:'esquerda',fundo:'transparente'},_resolverFamilia:function(f){var m={'inter':'Inter','poppins':'Poppins','mono':'JetBrains Mono','serif':'Times New Roman','sans':'Arial','elegante':'Playfair Display','titulo':'Bebas Neue','manuscrita':'Caveat','decorativa':'Pacifico','padrao':'system-ui'};return m[f]||f;},_resolverPeso:function(p){var m={'fino':'300','normal':'400','medio':'500','semi_negrito':'600','negrito':'700','extra_negrito':'900'};return m[p]||p;},_estiloAttr:function(e){if(e==='italico')return'font-style:italic;';if(e==='obliquo')return'font-style:oblique;';return'';},_orientacaoAttr:function(o,a){if(o==='vertical')return'writing-mode:vertical-rl;';if(o==='obliquo')return'transform:skewX(-15deg);';if(a&&a!==0)return'transform:rotate('+a+'deg);';return'';},_ajusteAttr:function(a){if(a==='canto')return'text-align:justify;';if(a==='centro')return'text-align:center;';if(a==='direita')return'text-align:right;';return'text-align:left;';},_fundoAttr:function(f){if(!f||f==='transparente')return'';return'background:'+f+';';}};",
   "componentes": {
     "titulo": {
-      "template": "<h1 class='ft-titulo' style='font-family:{{familia}},sans-serif;font-size:{{tamanho}}px;color:{{cor}};font-weight:{{peso}};text-align:{{alinhar}};{{estilo_attr}}{{orientacao_attr}}{{ajuste_attr}}'>{{conteudo}}</h1>",
-      "atributos": ["familia", "tamanho", "cor", "peso", "alinhar", "estilo", "orientacao", "angulo", "ajuste", "conteudo"]
+      "template": "<h1 class='ft-titulo' style='font-family:{{familia}},sans-serif;font-size:{{tamanho}}px;color:{{cor}};font-weight:{{peso}};{{alinhar_attr}}{{estilo_attr}}{{orientacao_attr}}'>{{conteudo}}</h1>",
+      "atributos": ["familia", "tamanho", "cor", "peso", "alinhar", "estilo", "orientacao", "angulo", "conteudo"]
     },
     "subtitulo": {
-      "template": "<h2 class='ft-subtitulo' style='font-family:{{familia}},sans-serif;font-size:{{tamanho}}px;color:{{cor}};font-weight:{{peso}};text-align:{{alinhar}};{{estilo_attr}}{{orientacao_attr}}'>{{conteudo}}</h2>",
+      "template": "<h2 class='ft-subtitulo' style='font-family:{{familia}},sans-serif;font-size:{{tamanho}}px;color:{{cor}};font-weight:{{peso}};{{alinhar_attr}}{{estilo_attr}}{{orientacao_attr}}'>{{conteudo}}</h2>",
       "atributos": ["familia", "tamanho", "cor", "peso", "alinhar", "estilo", "orientacao", "angulo", "conteudo"]
     },
     "texto": {
-      "template": "<p class='ft-texto' style='font-family:{{familia}},sans-serif;font-size:{{tamanho}}px;color:{{cor}};font-weight:{{peso}};text-align:{{alinhar}};{{estilo_attr}}{{orientacao_attr}}{{ajuste_attr}}'>{{conteudo}}</p>",
-      "atributos": ["familia", "tamanho", "cor", "peso", "alinhar", "estilo", "orientacao", "angulo", "ajuste", "conteudo"]
+      "template": "<p class='ft-texto' style='font-family:{{familia}},sans-serif;font-size:{{tamanho}}px;color:{{cor}};font-weight:{{peso}};{{alinhar_attr}}{{estilo_attr}}{{orientacao_attr}}'>{{conteudo}}</p>",
+      "atributos": ["familia", "tamanho", "cor", "peso", "alinhar", "estilo", "orientacao", "angulo", "conteudo"]
     },
     "badge": {
-      "template": "<span class='ft-badge' style='font-family:{{familia}},sans-serif;font-size:{{tamanho}}px;color:{{cor}};font-weight:{{peso}};background:{{fundo}};border-radius:999px;padding:4px 12px;'>{{conteudo}}</span>",
+      "template": "<span class='ft-badge' style='font-family:{{familia}},sans-serif;font-size:{{tamanho}}px;color:{{cor}};font-weight:{{peso}};{{fundo_attr}}border-radius:999px;padding:4px 12px;display:inline-block;'>{{conteudo}}</span>",
       "atributos": ["familia", "tamanho", "cor", "peso", "fundo", "conteudo"]
     },
     "botao": {
-      "template": "<button class='ft-botao' style='font-family:{{familia}},sans-serif;font-size:{{tamanho}}px;color:{{cor}};font-weight:{{peso}};background:{{fundo}};border:none;border-radius:10px;padding:10px 20px;cursor:pointer;'>{{conteudo}}</button>",
-      "atributos": ["familia", "tamanho", "cor", "peso", "fundo", "conteudo"]
+      "template": "<button class='ft-botao' style='font-family:{{familia}},sans-serif;font-size:{{tamanho}}px;color:{{cor}};font-weight:{{peso}};{{fundo_attr}}border:none;border-radius:10px;padding:10px 20px;cursor:pointer;' onclick='{{acao}}'>{{conteudo}}</button>",
+      "atributos": ["familia", "tamanho", "cor", "peso", "fundo", "acao", "conteudo"]
     },
     "entrada": {
       "template": "<input class='ft-entrada' style='font-family:{{familia}},sans-serif;font-size:{{tamanho}}px;color:{{cor}};border:1px solid #e2e8f0;border-radius:8px;padding:10px 12px;' placeholder='{{placeholder}}'>",
       "atributos": ["familia", "tamanho", "cor", "placeholder"]
     },
     "grupo": {
-      "template": "<div class='ft-grupo' style='font-family:{{familia}},sans-serif;font-size:{{tamanho}}px;color:{{cor}};text-align:{{alinhar}};{{orientacao_attr}}'>{{conteudo}}</div>",
+      "template": "<div class='ft-grupo' style='font-family:{{familia}},sans-serif;font-size:{{tamanho}}px;color:{{cor}};{{alinhar_attr}}{{orientacao_attr}}'>{{conteudo}}</div>",
       "atributos": ["familia", "tamanho", "cor", "alinhar", "orientacao", "angulo", "conteudo"]
     },
     "secao": {
