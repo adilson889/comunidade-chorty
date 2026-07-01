@@ -58,9 +58,9 @@
     "id": "graficos.linhas",
     "nome": "graficos.linhas",
     "alias": "gl",
-    "versao": "1.0",
+    "versao": "2.0",
     "autor": "comunidade-chorty",
-    "descricao": "Gráficos de linhas SVG nativos — com pontos e tendências.",
+    "descricao": "Gráficos de linhas SVG nativos — com pontos e tendências, lê directamente arrays de dados TOON.",
     "tamanho": "3 KB",
     "url": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/graficos/linhas/1.0.chorty-lib",
     "docs": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/graficos/linhas/doc.md"
