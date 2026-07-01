@@ -36,10 +36,10 @@
     "id": "graficos",
     "nome": "graficos",
     "alias": "gt",
-    "versao": "1.0",
+    "versao": "1.1",
     "autor": "comunidade-chorty",
     "descricao": "Pacote unificado de gráficos SVG nativos — barras, linhas, pizza, área e radar num único componente. Lê directamente arrays de dados TOON.",
-    "tamanho": "9 KB",
+    "tamanho": "10 KB",
     "url": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/graficos/1.0.chorty-lib",
     "docs": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/graficos/doc.md"
   },
