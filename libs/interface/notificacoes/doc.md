@@ -7,7 +7,7 @@ Sistema de notificações visuais rápidas (Toast). Aparece e some sem bloquear 
 
 A notificação é uma mensagem flutuante que surge na tela para dar feedback imediato ao utilizador. Pode ser usada para sucesso, erros, avisos ou informações gerais.
 
-## xemplo visual:
+## Exemplo visual:
 ```
 in:notificar
 tipo="sucesso"
