@@ -7,9 +7,8 @@ Sistema de notificações visuais rápidas (Toast). Aparece e some sem bloquear 
 
 A notificação é uma mensagem flutuante que surge na tela para dar feedback imediato ao utilizador. Pode ser usada para sucesso, erros, avisos ou informações gerais.
 
+## xemplo visual:
 ```
-
-Exemplo visual:
 in:notificar
 tipo="sucesso"
 conteudo="Dados guardados com sucesso!"
@@ -29,21 +28,24 @@ config
 fim
 ```
 
-Atributos
 
-Atributo Obrigatório Tipo Padrão Descrição
-conteudo sim Texto — A mensagem que será exibida
-tipo não Texto "info" Estilo da notificação: sucesso, erro, aviso ou info
-duracao não Número 3000 Tempo em milissegundos antes de sumir
-posicao não Texto "baixo" Onde aparece: "baixo" (padrão) ou "centro"
+## Atributos
 
-Tipos de notificação
+| Atributo | Obrigatório | Tipo | Padrão | Descrição |
+|---|---|---|---|---|
+| `conteudo` | sim | Texto | — | A mensagem que será exibida |
+| `tipo` | não | Texto | `"info"` | Estilo da notificação: `sucesso`, `erro`, `aviso` ou `info` |
+| `duracao` | não | Número | `3000` | Tempo em milissegundos antes de sumir |
+| `posicao` | não | Texto | `"baixo"` | Onde aparece: `"baixo"` (padrão) ou `"centro"` |
 
-Tipo Cor Uso
-sucesso Verde Operação concluída com êxito
-erro Vermelho Algo correu mal
-aviso Amarelo/Laranja Atenção ou alerta
-info Azul Informação geral
+## Tipos de notificação
+
+| Tipo | Cor | Uso |
+|---|---|---|
+| `sucesso` | Verde | Operação concluída com êxito |
+| `erro` | Vermelho | Algo correu mal |
+| `aviso` | Amarelo/Laranja | Atenção ou alerta |
+| `info` | Azul | Informação geral |
 
 Exemplos
 
