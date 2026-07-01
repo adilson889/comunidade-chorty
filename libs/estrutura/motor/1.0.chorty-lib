@@ -1,6 +1,6 @@
 {
   "id": "estrutura.motor",
-  "alias": "em",
+  "alias": "esm",
   "versao": "1.0",
   "autor": "comunidade-chorty",
   "descricao": "Motor de base de dados real via SQLite (SQL.js/WASM) com persistência em IndexedDB. Liga-se automaticamente à biblioteca estrutura.dados.",
