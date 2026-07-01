@@ -55,17 +55,6 @@
     "docs": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/graficos/area/doc.md"
   },
   {
-    "id": "graficos.barras",
-    "nome": "graficos.barras",
-    "alias": "gb",
-    "versao": "2.1",
-    "autor": "comunidade-chorty",
-    "descricao": "Gráficos de barras SVG nativos — lê directamente arrays de dados TOON. Verticais, agrupadas para múltiplas séries.",
-    "tamanho": "3 KB",
-    "url": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/graficos/barras/1.0.chorty-lib",
-    "docs": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/graficos/barras/doc.md"
-  },
-  {
     "id": "interface.notificacoes",
     "nome": "interface.notificacoes",
     "alias": "in",
