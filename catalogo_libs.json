@@ -47,7 +47,7 @@
     "id": "graficos.barras",
     "nome": "graficos.barras",
     "alias": "gb",
-    "versao": "2.0",
+    "versao": "2.1",
     "autor": "comunidade-chorty",
     "descricao": "Gráficos de barras SVG nativos — lê directamente arrays de dados TOON. Verticais, agrupadas para múltiplas séries.",
     "tamanho": "3 KB",
