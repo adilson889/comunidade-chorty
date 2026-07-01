@@ -1,0 +1,17 @@
+{
+  "id": "estrutura.motor",
+  "alias": "em",
+  "versao": "1.0",
+  "autor": "comunidade-chorty",
+  "descricao": "Motor de base de dados real via SQLite (SQL.js/WASM) com persistência em IndexedDB. Liga-se automaticamente à biblioteca estrutura.dados.",
+  "namespace": "window._chortyMotor",
+  "estilos": "",
+  "scripts": "window._chortyMotor=window._chortyMotor||{_pronto:false,_fila:[],inicializar:function(){if(this._pronto||this._iniciando)return;this._iniciando=true;var self=this;var script=document.createElement('script');script.src='https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/sql-wasm.js';script.onload=function(){initSqlJs({locateFile:function(f){return'https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/'+f;}}).then(function(SQL){var abrir=function(bytes){window._chorty_db={_sql:SQL,_instancia:bytes?new SQL.Database(new Uint8Array(bytes)):new SQL.Database(),_gravarTimer:null,executar:function(sql){var self2=this;var cmd=sql.trim().split(' ')[0].toUpperCase();try{if(cmd==='SELECT'){var res=this._instancia.exec(sql);if(!res.length)return[];return res[0].values.map(function(row){var obj={};res[0].columns.forEach(function(col,i){obj[col]=row[i];});return obj;});}else{this._instancia.run(sql);clearTimeout(this._gravarTimer);this._gravarTimer=setTimeout(function(){self2._persistir();},400);return this._instancia.getRowsModified();}}catch(e){console.error('Chorty DB erro:',e.message,'| SQL:',sql);return null;}},_persistir:function(){try{var bytes=this._instancia.export();var blob=Array.from(bytes);var req=indexedDB.open('chorty_db',1);req.onupgradeneeded=function(){req.result.createObjectStore('dados');};req.onsuccess=function(){var tx=req.result.transaction('dados','readwrite');tx.objectStore('dados').put(blob,'sqlite');};}catch(e){console.error('Chorty DB persistir erro:',e);}}};self._pronto=true;self._fila.forEach(function(fn){fn();});self._fila=[];};var req=indexedDB.open('chorty_db',1);req.onupgradeneeded=function(){req.result.createObjectStore('dados');};req.onsuccess=function(){var tx=req.result.transaction('dados','readonly');var get=tx.objectStore('dados').get('sqlite');get.onsuccess=function(){abrir(get.result||null);};get.onerror=function(){abrir(null);};};req.onerror=function(){abrir(null);};});};document.head.appendChild(script);},aoPronto:function(fn){if(this._pronto){fn();}else{this._fila.push(fn);}}};document.addEventListener('DOMContentLoaded',function(){window._chortyMotor.inicializar();});",
+  "componentes": {},
+  "funcoes": {
+    "aoPronto": {
+      "params": ["funcao"],
+      "descricao": "Executa a função assim que a base de dados estiver pronta a usar."
+    }
+  }
+}
