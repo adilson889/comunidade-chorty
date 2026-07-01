@@ -3,22 +3,9 @@
 
 ## Conceito
 
-Sistema de notificações visuais rápidas (Toast). Aparece e some sem bloquear a aplicação.
-
-A notificação é uma mensagem flutuante que surge na tela para dar feedback imediato ao utilizador. Pode ser usada para sucesso, erros, avisos ou informações gerais.
-
-## Exemplo visual:
-```
-in:notificar
-tipo="sucesso"
-conteudo="Dados guardados com sucesso!"
-fim
-
-```
+Sistema de notificações visuais rápidas (Toast). Aparece e some sem bloquear a aplicação. Usada de dentro da `logica`, disparada por ações do utilizador — não é um elemento estático da `tela`.
 
 ## Instalação
-
-No bloco `config` do seu programa (obrigatório para uso da UI):
 
 ```chorty
 config
@@ -28,66 +15,56 @@ config
 fim
 ```
 
+## Uso
 
-## Atributos
-
-| Atributo | Obrigatório | Tipo | Padrão | Descrição |
-|---|---|---|---|---|
-| `conteudo` | sim | Texto | — | A mensagem que será exibida |
-| `tipo` | não | Texto | `"info"` | Estilo da notificação: `sucesso`, `erro`, `aviso` ou `info` |
-| `duracao` | não | Número | `3000` | Tempo em milissegundos antes de sumir |
-| `posicao` | não | Texto | `"baixo"` | Onde aparece: `"baixo"` (padrão) ou `"centro"` |
-
-## Tipos de notificação
-
-| Tipo | Cor | Uso |
-|---|---|---|
-| `sucesso` | Verde | Operação concluída com êxito |
-| `erro` | Vermelho | Algo correu mal |
-| `aviso` | Amarelo/Laranja | Atenção ou alerta |
-| `info` | Azul | Informação geral |
-
-Exemplos
-
-Notificação básica (padrão)
+`in.notificar(mensagem, tipo, duracao, posicao)` — chamada dentro de qualquer `funcao`, tipicamente a partir de `acao=` num botão.
 
 ```chorty
-in:notificar
-    conteudo="Olá, mundo!"
+funcao guardar()
+  in.notificar("Dados guardados com sucesso!", "sucesso")
 fim
 ```
 
-Notificação de sucesso
+## Parâmetros
+
+| Parâmetro | Posição | Obrigatório | Tipo | Padrão | Descrição |
+|---|---|---|---|---|---|
+| `mensagem` | 1º | sim | Texto | — | A mensagem exibida |
+| `tipo` | 2º | não | Texto | `"info"` | `sucesso`, `erro`, `aviso` ou `info` |
+| `duracao` | 3º | não | Número | `3000` | Milissegundos antes de sumir |
+| `posicao` | 4º | não | Texto | `"baixo"` | `"baixo"` ou `"centro"` |
+
+## Tipos
+
+| Tipo | Cor |
+|---|---|
+| `sucesso` | Verde |
+| `erro` | Vermelho |
+| `aviso` | Amarelo |
+| `info` | Azul |
+
+## Exemplos
 
 ```chorty
-in:notificar
-    tipo="sucesso"
-    conteudo="Conta criada com sucesso!"
+funcao aoClicarSalvar()
+  in.notificar("Olá, mundo!")
+fim
+
+funcao aoRegistar()
+  in.notificar("Conta criada com sucesso!", "sucesso")
+fim
+
+funcao aoFalharLigacao()
+  in.notificar("Falha na conexão. Tente novamente.", "erro", 5000)
+fim
+
+funcao aoExpirarSessao()
+  in.notificar("Atenção! Sessão vai expirar.", "aviso", 3000, "centro")
 fim
 ```
 
-Notificação de erro com duração prolongada
+## Notas técnicas
 
-```chorty
-in:notificar
-    tipo="erro"
-    duracao=5000
-    conteudo="Falha na conexão. Tente novamente."
-fim
-```
-
-Notificação central (popup estilo modal)
-
-```chorty
-in:notificar
-    tipo="aviso"
-    posicao="centro"
-    conteudo="Atenção! Sessão vai expirar."
-fim
-```
-
-# Notas técnicas
-
-· O componente in:notificar requer uma aplicação gráfica (saida = "app" ou saida = "html") para funcionar, pois depende de CSS e DOM. Em modo script (console puro), utilize imprimir() para exibir mensagens.
-· A duração é medida em milissegundos (1000 ms = 1 segundo).
-· As notificações são empilhadas automaticamente: se várias forem chamadas em sequência, a anterior é removida antes da nova aparecer.
+- Requer `saida = "app"` (depende de DOM e CSS).
+- Não é um elemento de `tela` — não usa `in:notificar` com dois pontos. É sempre `in.notificar(...)` dentro de `logica`.
+- Notificações são empilhadas: a anterior desaparece antes da próxima surgir.
