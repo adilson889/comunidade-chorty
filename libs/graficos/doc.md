@@ -1,152 +1,170 @@
-
-# Gráficos (gf)
+# Gráficos (barras, linhas, pizza, área, radar)
 
 ## Conceito
 
-A biblioteca `graficos` renderiza gráficos SVG nativos — barras, linhas, pizza, área e horizontais. Sem dependências externas. Os dados são passados como `rótulos` e `séries` em formato JSON.
+As bibliotecas de gráficos renderizam SVG nativo — sem dependências externas. Cada tipo de gráfico é uma biblioteca separada, mas todas partilham a mesma filosofia: **os dados vêm directamente de um bloco TOON**, sem JSON manual, sem `rotulos`/`series` escritos à mão.
+
+```
+Regra de ouro:
+utilizadores[]{id, nome, pontos}:  ← declaras os dados uma vez em TOON
+gb:grafico itens=utilizadores ...   ← qualquer lib de gráfico lê o mesmo array
+```
+
+## Bibliotecas disponíveis
+
+| Biblioteca | Alias | Componente | Uso ideal |
+|---|---|---|---|
+| `graficos.barras` | `gb` | `gb:grafico` | Comparar valores entre categorias |
+| `graficos.linhas` | `gl` | `gl:grafico` | Tendências ao longo do tempo |
+| `graficos.pizza` | `gp` | `gp:grafico` | Proporções de um total |
+| `graficos.area` | `ga` | `ga:grafico` | Tendências com volume acumulado |
+| `graficos.radar` | `gr` | `gr:grafico` | Comparar múltiplas métricas de um item |
 
 ## Instalação
 
+Instala apenas as que precisares:
+
 ```chorty
-usar biblioteca graficos gf
+config
+  usar biblioteca graficos.barras gb
+  usar biblioteca graficos.linhas gl
+  usar biblioteca graficos.pizza gp
+  usar biblioteca graficos.area ga
+  usar biblioteca graficos.radar gr
+fim
 ```
 
-## Componente
+## Passo 1 — declarar os dados em TOON
 
-### gf:grafico
-
-Componente único que renderiza o tipo de gráfico especificado.
+Todas as libs de gráfico partilham a mesma fonte de dados: um bloco TOON.
 
 ```chorty
-gf:grafico
-  tipo="barras"
-  titulo="Vendas Mensais"
+utilizadores[]{id, nome, pontos}:
+  1, "Alice", 30
+  2, "Bob", 28
+  3, "Carlos", 45
+```
+
+- `utilizadores[]{...}:` declara o array e os seus campos
+- cada linha seguinte, indentada, é um registo (separado por vírgulas, na mesma ordem dos campos)
+
+## Passo 2 — usar o gráfico
+
+Todos os componentes `grafico` das 5 bibliotecas usam os **mesmos nomes de atributo**:
+
+| Atributo | Obrigatório | Descrição |
+|---|---|---|
+| `itens` | sim | nome do array TOON a usar |
+| `rotulo` | sim* | nome do campo a usar como rótulo (eixo X / legenda) |
+| `valor` | sim | nome do campo numérico a usar. Aceita vários separados por vírgula: `valor="vendas,despesas"` |
+| `conteudo` | não | título mostrado acima do gráfico |
+| `altura` | não | altura em pixels (padrão `300`, radar `360`) |
+| `cor` | não | cor principal — só usada quando há uma única série |
+
+> \* No `graficos.radar`, `rotulo` não é usado; os "eixos" do radar vêm de `valor` (os nomes dos campos, um por eixo).
+
+### Sintaxe comum
+
+```chorty
+alias:grafico
+  itens=nomeDoArrayToon
+  rotulo="campo"
+  valor="campo"
+  conteudo="Título opcional"
   altura=300
   cor="azul"
-  rotulos="['Jan','Fev','Mar','Abr','Mai']"
-  series="[{nome:'Vendas',valores:[120,200,150,80,180]},{nome:'Despesas',valores:[80,95,110,70,100]}]"
-  espaco=16
-  sombra="media"
+fim
 ```
 
-## Atributos
+## Exemplos por tipo
 
-| Atributo | Tipo | Valores | Padrão | Descrição |
-|----------|------|---------|--------|-----------|
-| `tipo` | texto | `"barras"`, `"linhas"`, `"pizza"`, `"area"`, `"horizontal"` | `"barras"` | Tipo de gráfico |
-| `titulo` | texto | — | vazio | Título exibido acima do gráfico |
-| `altura` | número | — | `300` | Altura em pixels |
-| `cor` | texto | nomes semânticos ou hex | `"azul"` | Cor principal (gráficos de 1 série) |
-| `rotulos` | texto | JSON array | `[]` | Rótulos do eixo X |
-| `series` | texto | JSON array | `[]` | Séries de dados com nome e valores |
-| `espaco` | número | — | — | Padding interno |
-| `margem` | número | — | — | Margem externa |
-| `sombra` | texto | `"leve"`, `"media"`, `"forte"` | — | Sombra do gráfico |
-
-## Tipos de Gráfico
-
-### gf:grafico tipo="barras"
-
-Barras verticais agrupadas. Suporta múltiplas séries.
+### gb:grafico (barras)
 
 ```chorty
-gf:grafico
-  tipo="barras"
-  titulo="Vendas por Mês"
-  altura=300
-  rotulos="['Jan','Fev','Mar','Abr','Mai','Jun']"
-  series="[{nome:'Produto A',valores:[120,200,150,80,180,220]},{nome:'Produto B',valores:[80,95,110,70,100,130]}]"
+gb:grafico
+  itens=utilizadores
+  rotulo="nome"
+  valor="pontos"
+  conteudo="Pontos por Utilizador"
+fim
 ```
 
-### gf:grafico tipo="linhas"
-
-Linhas conectadas com pontos. Ideal para tendências.
+Múltiplas séries (barras agrupadas):
 
 ```chorty
-gf:grafico
-  tipo="linhas"
-  titulo="Crescimento Anual"
-  altura=300
-  rotulos="['2020','2021','2022','2023','2024']"
-  series="[{nome:'Clientes',valores:[150,280,450,620,890]}]"
+gb:grafico
+  itens=utilizadores
+  rotulo="nome"
+  valor="pontos,bonus"
+  conteudo="Pontos e Bónus"
+fim
 ```
 
-### gf:grafico tipo="pizza"
-
-Gráfico circular. Usa apenas a primeira série.
+### gl:grafico (linhas)
 
 ```chorty
-gf:grafico
-  tipo="pizza"
-  titulo="Distribuição Regional"
-  altura=300
-  rotulos="['Luanda','Benguela','Huila','Huambo','Outros']"
-  series="[{nome:'Regiões',valores:[35,25,20,15,5]}]"
+gl:grafico
+  itens=vendas
+  rotulo="mes"
+  valor="total"
+  conteudo="Crescimento Mensal"
+  cor="verde"
+fim
 ```
 
-### gf:grafico tipo="area"
+### gp:grafico (pizza)
 
-Área preenchida. Ideal para volumes.
+Usa sempre um único campo de valor — não suporta múltiplas séries.
 
 ```chorty
-gf:grafico
-  tipo="area"
-  titulo="Sessões Mensais"
-  altura=300
-  rotulos="['Jan','Fev','Mar','Abr','Mai']"
-  series="[{nome:'Sessões',valores:[1200,2000,1500,1800,2200]}]"
+gp:grafico
+  itens=regioes
+  rotulo="nome"
+  valor="percentagem"
+  conteudo="Distribuição Regional"
+fim
 ```
 
-### gf:grafico tipo="horizontal"
-
-Barras horizontais com valores.
+### ga:grafico (área)
 
 ```chorty
-gf:grafico
-  tipo="horizontal"
-  titulo="Top Categorias"
-  altura=300
-  rotulos="['Tecnologia','Saúde','Educação','Finanças','Energia']"
-  series="[{nome:'Investimento',valores:[850,620,480,350,290]}]"
+ga:grafico
+  itens=sessoes
+  rotulo="mes"
+  valor="total"
+  conteudo="Sessões Mensais"
+  cor="roxo"
+fim
 ```
 
-## Cores Disponíveis
+### gr:grafico (radar)
 
-| Cor | Valor |
-|-----|-------|
-| Azul | `"azul"` |
-| Verde | `"verde"` |
-| Vermelho | `"vermelho"` |
-| Amarelo | `"amarelo"` |
-| Laranja | `"laranja"` |
-| Roxo | `"roxo"` |
-| Rosa | `"rosa"` |
-| Ciano | `"ciano"` |
-| Turquesa | `"turquesa"` |
-| Índigo | `"indigo"` |
-| Cinza | `"cinza"` |
-| Preto | `"preto"` |
-| Branco | `"branco"` |
-
-Para múltiplas séries, as cores são atribuídas automaticamente a partir da paleta.
-
-## Estilo Visual
-
-O gráfico aceita atributos de estilo do ResolvedorEstilo nativo:
+No radar, `valor` define os **eixos** do gráfico (uma métrica por eixo). Cada linha do array TOON vira um polígono sobreposto — útil para comparar vários itens no mesmo gráfico.
 
 ```chorty
-gf:grafico
-  tipo="barras"
-  titulo="Vendas"
-  altura=350
-  espaco=20
-  margem=16
-  sombra="media"
-  rotulos="['A','B','C']"
-  series="[{nome:'X',valores:[10,20,30]}]"
+jogadores[]{nome, ataque, defesa, velocidade, resistencia}:
+  1, "Jogador A", 80, 60, 90, 70
+
+gr:grafico
+  itens=jogadores
+  valor="ataque,defesa,velocidade,resistencia"
+  conteudo="Perfil do Jogador"
+fim
 ```
 
-## Exemplo Completo
+## Cores disponíveis
+
+| Nome | Nome | Nome |
+|---|---|---|
+| `azul` | `verde` | `vermelho` |
+| `amarelo` | `laranja` | `roxo` |
+| `rosa` | `ciano` | `turquesa` |
+| `indigo` | `cinza` | `preto` |
+| `branco` | | |
+
+Quando há mais do que uma série (`valor="a,b,c"`), a cor é atribuída automaticamente a partir de uma paleta — o atributo `cor` só se aplica a gráficos de série única.
+
+## Exemplo completo (dashboard)
 
 ```chorty
 app "Dashboard Vendas"
@@ -155,7 +173,8 @@ config
   saida = "app"
   importar elementosUI
   importar reatividade
-  usar biblioteca graficos gf
+  usar biblioteca graficos.barras gb
+  usar biblioteca graficos.pizza gp
 fim
 
 tela "Dashboard"
@@ -164,37 +183,47 @@ tela "Dashboard"
     titulo "Painel de Vendas"
   fim
 
+  vendas[]{mes, total, despesas}:
+    1, "Jan", 120, 80
+    2, "Fev", 200, 95
+    3, "Mar", 150, 110
+
+  regioes[]{nome, percentagem}:
+    1, "Luanda", 35
+    2, "Benguela", 25
+    3, "Huíla", 20
+    4, "Huambo", 15
+    5, "Outros", 5
+
   secao espaco=24
-
     titulo "Resumo Mensal"
-
-    gf:grafico
-      tipo="barras"
-      titulo="Vendas Mensais"
-      altura=300
-      rotulos="['Jan','Fev','Mar','Abr','Mai','Jun']"
-      series="[{nome:'Vendas',valores:[120,200,150,180,220,250]},{nome:'Despesas',valores:[80,95,110,70,100,130]}]"
-      sombra="media"
-      espaco=16
-
+    gb:grafico
+      itens=vendas
+      rotulo="mes"
+      valor="total,despesas"
+      conteudo="Vendas Mensais"
+    fim
   fim
 
   secao espaco=24
-
     titulo "Distribuição"
-
-    gf:grafico
-      tipo="pizza"
-      titulo="Por Região"
-      altura=300
-      rotulos="['Luanda','Benguela','Huila','Huambo','Outros']"
-      series="[{nome:'Regiões',valores:[35,25,20,15,5]}]"
-
+    gp:grafico
+      itens=regioes
+      rotulo="nome"
+      valor="percentagem"
+      conteudo="Por Região"
+    fim
   fim
 
 fim
 ```
 
+## Notas técnicas
+
+- Os componentes `grafico` só resolvem `itens` correctamente se este for uma variável declarada com TOON (`nome[]{...}:`) — não usar strings JSON manuais.
+- `rotulo` e `valor` são **nomes de campo** (texto), sempre entre aspas.
+- Não uses `dados`, `titulo` ou `id` como nome de atributo em qualquer biblioteca — são palavras reservadas do Chorty e ficam sempre vazias. Por isso estas bibliotecas usam `itens`, `conteudo` e `ref`.
+
 ## Resumo
 
-A biblioteca `graficos` oferece 5 tipos de gráficos SVG nativos. Os dados são passados como rótulos e séries em formato JSON. Suporta atributos de estilo do ResolvedorEstilo nativo. Sem dependências externas.
+As 5 bibliotecas de gráficos (`barras`, `linhas`, `pizza`, `area`, `radar`) partilham uma API idêntica: declara os dados uma vez com TOON, depois usa `itens=`, `rotulo=`, `valor=` e `conteudo=` em qualquer uma delas. Trocar de tipo de gráfico é só trocar o alias — a estrutura do bloco mantém-se igual.
