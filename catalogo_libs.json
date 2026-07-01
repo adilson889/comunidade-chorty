@@ -44,17 +44,6 @@
     "docs": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/graficos/doc.md"
   },
   {
-    "id": "graficos.area",
-    "nome": "graficos.area",
-    "alias": "ga",
-    "versao": "1.0",
-    "autor": "comunidade-chorty",
-    "descricao": "Gráfico de área SVG nativo — linha preenchida, ideal para tendências e volumes acumulados ao longo do tempo.",
-    "tamanho": "3 KB",
-    "url": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/graficos/area/1.0.chorty-lib",
-    "docs": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/graficos/area/doc.md"
-  },
-  {
     "id": "interface.notificacoes",
     "nome": "interface.notificacoes",
     "alias": "in",
