@@ -1,6 +1,6 @@
 {
   "id": "graficos.barras",
-  "alias": "gf",
+  "alias": "gb",
   "versao": "1.0",
   "autor": "comunidade-chorty",
   "descricao": "Gráficos de barras SVG nativos — verticais e agrupadas para múltiplas séries.",
