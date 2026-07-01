@@ -88,17 +88,6 @@
     "docs": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/graficos/pizza/doc.md"
   },
   {
-    "id": "graficos.radar",
-    "nome": "graficos.radar",
-    "alias": "gr",
-    "versao": "1.0",
-    "autor": "comunidade-chorty",
-    "descricao": "Gráfico radar (teia de aranha) SVG nativo — compara múltiplas métricas de um item em eixos angulares.",
-    "tamanho": "3 KB",
-    "url": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/graficos/radar/1.0.chorty-lib",
-    "docs": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/graficos/radar/doc.md"
-  },
-  {
     "id": "interface.notificacoes",
     "nome": "interface.notificacoes",
     "alias": "in",
