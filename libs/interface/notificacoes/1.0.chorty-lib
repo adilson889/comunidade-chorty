@@ -1,0 +1,20 @@
+{
+  "id": "interface.notificacoes",
+  "alias": "in",
+  "versao": "1.0",
+  "autor": "comunidade-chorty",
+  "descricao": "Sistema de notificações elegantes estilo Toast. Mensagens rápidas e discretas que aparecem e somem suavemente.",
+
+  "estilos": ".chorty-notify{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(20px);padding:16px 28px;border-radius:16px;font-family:system-ui,sans-serif;font-size:15px;font-weight:500;color:#fff;box-shadow:0 10px 30px rgba(0,0,0,0.2);z-index:99999;opacity:0;pointer-events:none;max-width:92%;text-align:center;transition:all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);}.chorty-notify.show{opacity:1;transform:translateX(-50%) translateY(0);pointer-events:auto;}.chorty-notify.sucesso{background:#16a34a;}.chorty-notify.erro{background:#dc2626;}.chorty-notify.aviso{background:#ca8a04;}.chorty-notify.info{background:#2563eb;}.chorty-notify.centro{top:50%;left:50%;bottom:auto;transform:translate(-50%, -50%) scale(0.9);}.chorty-notify.centro.show{transform:translate(-50%, -50%) scale(1);}",
+
+  "scripts": "window.in = window.in || {_timer: null, _mostrar: function(msg, tipo, dur, pos){var p = pos || 'baixo'; var c = document.getElementById('chorty-notify-wrap'); if(!c){c=document.createElement('div');c.id='chorty-notify-wrap';document.body.appendChild(c);} var el=document.createElement('div'); el.className='chorty-notify '+tipo; if(p=='centro'){el.classList.add('centro');} el.innerText=msg; c.appendChild(el); setTimeout(function(){el.classList.add('show');},10); clearTimeout(this._timer); this._timer=setTimeout(function(){ if(el){el.classList.remove('show'); setTimeout(function(){if(el.parentNode)el.parentNode.removeChild(el);},400);} },dur||3000); }};",
+
+  "componentes": {
+    "notificar": {
+      "template": "<script>try{window.in._mostrar('{{conteudo}}','{{tipo}}',{{duracao}},'{{posicao}}');}catch(e){console.error('in:notificar erro',e);}</script>",
+      "atributos": ["conteudo", "tipo", "duracao", "posicao"]
+    }
+  },
+
+  "funcoes": {}
+}
