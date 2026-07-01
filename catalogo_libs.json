@@ -102,10 +102,10 @@
     "id": "interface.notificacoes",
     "nome": "interface.notificacoes",
     "alias": "in",
-    "versao": "1.1",
+    "versao": "1.2",
     "autor": "comunidade-chorty",
     "descricao": "Sistema de notificações elegantes estilo Toast. Mensagens rápidas e discretas que aparecem e somem suavemente.",
-    "tamanho": "2 KB",
+    "tamanho": "1 KB",
     "url": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/interface/notificacoes/1.0.chorty-lib",
     "docs": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/interface/notificacoes/doc.md"
   },
