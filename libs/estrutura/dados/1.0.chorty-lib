@@ -345,6 +345,11 @@
       "descricao": "Tipo DATE",
       "retorna": "tipo_coluna"
     },
-    "paraTexto": "function(arr){ if(!Array.isArray(arr)) return String(arr); return arr.map(function(r){ return Object.keys(r).map(function(k){return k+': '+r[k];}).join(', '); }).join('\\n'); }"
+    "paraTexto": {
+      "params": [
+        "arr"
+      ],
+      "js": "function(arr){ if(!Array.isArray(arr)) return String(arr); return arr.map(function(r){ return Object.keys(r).map(function(k){return k+': '+r[k];}).join(', '); }).join('\\n'); }"
+    }
   }
 }
