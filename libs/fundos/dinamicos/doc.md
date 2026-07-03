@@ -36,14 +36,10 @@ tela "Inicio"
 fim
 ```
 
-## Atributos
-
-Atributo Obrigatório Tipo Padrão Descrição
-tipo não Texto "estrelas" Tipo de animação: estrelas, particulas ou ondas
-cor1 não Texto "branco" Cor principal (estrelas, partículas, linhas das ondas)
-cor2 não Texto "azul_claro" Cor secundária (conexões entre partículas)
-velocidade não Número 1 Velocidade da animação (0.5 = lento, 2 = rápido)
-densidade não Número 50 Quantidade de elementos no fundo
+| Atributo | Obrigatório | Tipo | Padrão | Descrição |
+|---|---|---|---|---|
+| `nome` | sim | Texto | — | O que faz |
+| `valor` | não | Número | `0` | O que faz |
 
 ## Cores disponíveis
 
