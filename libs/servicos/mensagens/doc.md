@@ -8,11 +8,11 @@ usar biblioteca servicos.mensagens sms
 
 ## Métodos
 
-sms.enviar(numero, texto) — envia SMS
-sms.recebidos() — lista todos os SMS recebidos
-sms.de(numero) — SMS de um contacto específico
-sms.enviados() — lista SMS enviados
-sms.apagar(id) — apaga uma mensagem
+* sms.enviar(numero, texto) — envia SMS
+* sms.recebidos() — lista todos os SMS recebidos
+* sms.de(numero) — SMS de um contacto específico
+* sms.enviados() — lista SMS enviados
+* sms.apagar(id) — apaga uma mensagem
 
 ## Exemplo
 
