@@ -35,23 +35,24 @@ Componente md:modal
 
 Atributos
 
-Atributo Obrigatório Tipo Padrão Descrição
-ref sim Texto — Nome único do modal
-tipo sim Texto — normal ou opcoes
-transicao não Texto "surgir" surgir, salto, deslizar ou instantaneo
-destaque não Texto "" Título do modal
-conteudo sim (normal) Texto — Mensagem do corpo
-positivo não Texto "Sim" Rótulo do botão confirmar
-negativo não Texto "Nao" Rótulo do botão cancelar
-opcoes sim (opcoes) Texto — Lista separada por vírgulas
-cor_fundo não Texto "branco" Cor de fundo da caixa
-cor_texto não Texto "preto" Cor do texto do corpo
-cor_destaque não Texto "preto" Cor do título
-cor_botao_sim não Texto "azul" Cor do botão confirmar
-cor_botao_nao não Texto "cinza_claro" Cor do botão cancelar
-cor_texto_sim não Texto "branco" Cor do texto do botão confirmar
-cor_texto_nao não Texto "cinza_escuro" Cor do texto do botão cancelar
-cor_overlay não Texto "rgba(15,23,42,.55)" Cor do overlay de fundo
+| Atributo | Obrigatório | Tipo | Padrão | Descrição |
+| --- | --- | --- | --- | --- |
+| `ref` | sim | Texto | — | Nome único do modal |
+| `tipo` | sim | Texto | — | `normal` ou `opcoes` |
+| `transicao` | não | Texto | `"surgir"` | `surgir`, `salto`, `deslizar` ou `instantaneo` |
+| `destaque` | não | Texto | `""` | Título do modal |
+| `conteudo` | sim (normal) | Texto | — | Mensagem do corpo |
+| `positivo` | não | Texto | `"Sim"` | Rótulo do botão confirmar |
+| `negativo` | não | Texto | `"Nao"` | Rótulo do botão cancelar |
+| `opcoes` | sim (opcoes) | Texto | — | Lista separada por vírgulas |
+| `cor_fundo` | não | Texto | `"branco"` | Cor de fundo da caixa |
+| `cor_texto` | não | Texto | `"preto"` | Cor do texto do corpo |
+| `cor_destaque` | não | Texto | `"preto"` | Cor do título |
+| `cor_botao_sim` | não | Texto | `"azul"` | Cor do botão confirmar |
+| `cor_botao_nao` | não | Texto | `"cinza_claro"` | Cor do botão cancelar |
+| `cor_texto_sim` | não | Texto | `"branco"` | Cor do texto do botão confirmar |
+| `cor_texto_nao` | não | Texto | `"cinza_escuro"` | Cor do texto do botão cancelar |
+| `cor_overlay` | não | Texto | `"rgba(15,23,42,.55)"` | Cor do overlay de fundo |
 
 Cores disponíveis
 
