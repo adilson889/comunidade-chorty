@@ -1,0 +1,26 @@
+{
+  "id": "desenho.livre",
+  "alias": "dl",
+  "versao": "1.0",
+  "autor": "comunidade-chorty",
+  "descricao": "Tartaruga gráfica para desenhar formas, linhas e padrões num canvas. Inspirado no módulo turtle do Python.",
+  "namespace": "window._chortyDesenho",
+  "estilos": "",
+  "scripts": "window._chortyDesenho = window._chortyDesenho || {_tela:null,_ctx:null,_x:0,_y:0,_angulo:0,_cor:'#2563eb',_lapis:true,iniciar:function(){var s=this;if(s._tela)return;s._tela=document.createElement('canvas');s._tela.style.cssText='position:fixed;inset:0;z-index:999;background:#fff;';s._ctx=s._tela.getContext('2d');document.body.appendChild(s._tela);s._redimensionar();window.addEventListener('resize',function(){s._redimensionar();});s._x=s._tela.width/2;s._y=s._tela.height/2;},_redimensionar:function(){this._tela.width=window.innerWidth;this._tela.height=window.innerHeight;this._x=this._tela.width/2;this._y=this._tela.height/2;},avancar:function(dist){var s=this;var rad=s._angulo*Math.PI/180;var nx=s._x+Math.cos(rad)*dist;var ny=s._y+Math.sin(rad)*dist;if(s._lapis){s._ctx.beginPath();s._ctx.moveTo(s._x,s._y);s._ctx.lineTo(nx,ny);s._ctx.strokeStyle=s._cor;s._ctx.lineWidth=2;s._ctx.stroke();}s._x=nx;s._y=ny;},recuar:function(dist){this.avancar(-dist);},girar:function(graus){this._angulo+=graus;},esquerda:function(graus){this._angulo-=graus;},cor:function(novaCor){var mapa={azul:'#2563eb',verde:'#16a34a',vermelho:'#dc2626',amarelo:'#ca8a04',roxo:'#7c3aed',laranja:'#ea580c',rosa:'#db2777',ciano:'#0891b2',preto:'#0f172a',branco:'#ffffff',cinza:'#64748b'};this._cor=mapa[novaCor]||novaCor;},levantar:function(){this._lapis=false;},baixar:function(){this._lapis=true;},limpar:function(){var s=this;if(s._tela){s._ctx.clearRect(0,0,s._tela.width,s._tela.height);s._x=s._tela.width/2;s._y=s._tela.height/2;s._angulo=0;}},fechar:function(){if(this._tela){this._tela.remove();this._tela=null;this._ctx=null;}},circulo:function(raio){var s=this;if(s._lapis){s._ctx.beginPath();s._ctx.arc(s._x,s._y,raio,0,Math.PI*2);s._ctx.strokeStyle=s._cor;s._ctx.lineWidth=2;s._ctx.stroke();}},estrela:function(pontas,tamanho){var s=this;if(!s._lapis)return;var passo=Math.PI/pontas;var r2=tamanho/2;s._ctx.beginPath();for(var i=0;i<2*pontas;i++){var r=i%2===0?tamanho:r2;var ang=i*passo-Math.PI/2;var x=s._x+Math.cos(ang)*r;var y=s._y+Math.sin(ang)*r;if(i===0)s._ctx.moveTo(x,y);else s._ctx.lineTo(x,y);}s._ctx.closePath();s._ctx.strokeStyle=s._cor;s._ctx.lineWidth=2;s._ctx.stroke();},posicao:function(){return{x:this._x,y:this._y,angulo:this._angulo};}};",
+  "componentes": {},
+  "funcoes": {
+    "iniciar": { "params": [], "js": "" },
+    "avancar": { "params": ["distancia"], "js": "" },
+    "recuar": { "params": ["distancia"], "js": "" },
+    "girar": { "params": ["graus"], "js": "" },
+    "esquerda": { "params": ["graus"], "js": "" },
+    "cor": { "params": ["cor"], "js": "" },
+    "levantar": { "params": [], "js": "" },
+    "baixar": { "params": [], "js": "" },
+    "limpar": { "params": [], "js": "" },
+    "fechar": { "params": [], "js": "" },
+    "circulo": { "params": ["raio"], "js": "" },
+    "estrela": { "params": ["pontas", "tamanho"], "js": "" },
+    "posicao": { "params": [], "js": "" }
+  }
+}
