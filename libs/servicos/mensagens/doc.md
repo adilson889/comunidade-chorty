@@ -15,14 +15,14 @@ usar biblioteca servicos.mensagens sms
 * sms.apagar(id) — apaga uma mensagem
 
 ## Exemplo
-
+```
 usar biblioteca servicos.mensagens sms
 
 sms.enviar("+244912345678", "Ola do Chorty!")
 
 mensagens = sms.recebidos()
 imprimir(mensagens[0].texto)
-
+```
 ## Notas
 
 Requer permissões ENVIAR_SMS e LER_SMS no .ConfigApp
