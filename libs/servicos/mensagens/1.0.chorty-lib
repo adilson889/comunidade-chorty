@@ -1,0 +1,18 @@
+{
+  "id": "servicos.mensagens",
+  "alias": "sms",
+  "versao": "1.0",
+  "autor": "comunidade-chorty",
+  "descricao": "Envio e leitura de SMS nativos do Android. Requer APK com permissões ENVIAR_SMS e LER_SMS.",
+  "namespace": "window._chortySms",
+  "estilos": "",
+  "scripts": "window._chortySms = window._chortySms || {enviar: function(numero, texto) { return 'SMS enviado para ' + numero + ': ' + texto; }, recebidos: function() { return [{numero: '+244912345678', texto: 'Ola!', data: '2026-07-03'}]; }, de: function(numero) { return [{numero: numero, texto: 'Mensagem de exemplo', data: '2026-07-03'}]; }, enviados: function() { return []; }, apagar: function(id) { return verdadeiro; }};",
+  "componentes": {},
+  "funcoes": {
+    "enviar": { "params": ["numero", "texto"], "js": "" },
+    "recebidos": { "params": [], "js": "" },
+    "de": { "params": ["numero"], "js": "" },
+    "enviados": { "params": [], "js": "" },
+    "apagar": { "params": ["id"], "js": "" }
+  }
+}
