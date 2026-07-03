@@ -44,6 +44,17 @@
     "docs": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/fontes/doc.md"
   },
   {
+    "id": "fundos.dinamicos",
+    "nome": "fundos.dinamicos",
+    "alias": "fd",
+    "versao": "1.0",
+    "autor": "comunidade-chorty",
+    "descricao": "Fundos animados com canvas — estrelas cintilantes, particulas conectadas e ondas suaves. Um unico componente que transforma o fundo da tela.",
+    "tamanho": "3 KB",
+    "url": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/fundos/dinamicos/1.0.chorty-lib",
+    "docs": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/fundos/dinamicos/doc.md"
+  },
+  {
     "id": "graficos",
     "nome": "graficos",
     "alias": "gt",
