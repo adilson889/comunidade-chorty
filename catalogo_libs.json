@@ -71,8 +71,8 @@
     "alias": "md",
     "versao": "1.0",
     "autor": "comunidade-chorty",
-    "descricao": "Sistema de modais elegantes — janelas flutuantes para confirmações, avisos e menus de opções. Leve, rápido e 100% Chorty.",
-    "tamanho": "3 KB",
+    "descricao": "Sistema de modais elegantes — janelas flutuantes para confirmações, avisos e menus de opções. Suporte a transições, cores customizáveis e dois tipos de exibição.",
+    "tamanho": "7 KB",
     "url": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/interface/modal/1.0.chorty-lib",
     "docs": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/interface/modal/doc.md"
   },
