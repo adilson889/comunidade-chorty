@@ -56,25 +56,24 @@ Atributos
 
 Cores disponíveis
 
-Nome Cor
-branco Branco
-azul Azul
-azul_claro Azul claro
-preto Preto
-vermelho Vermelho
-verde Verde
-amarelo Amarelo
-roxo Roxo
-cinza Cinza
-laranja Laranja
-rosa Rosa
-ciano Ciano
-turquesa Turquesa
-indigo Índigo
-cinza_claro Cinza claro
-cinza_escuro Cinza escuro
-
----
+| Nome | Cor |
+| --- | --- |
+| `branco` | Branco |
+| `azul` | Azul |
+| `azul_claro` | Azul claro |
+| `preto` | Preto |
+| `vermelho` | Vermelho |
+| `verde` | Verde |
+| `amarelo` | Amarelo |
+| `roxo` | Roxo |
+| `cinza` | Cinza |
+| `laranja` | Laranja |
+| `rosa` | Rosa |
+| `ciano` | Ciano |
+| `turquesa` | Turquesa |
+| `indigo` | Índigo |
+| `cinza_claro` | Cinza claro |
+| `cinza_escuro` | Cinza escuro |
 
 Tipos de modal
 
