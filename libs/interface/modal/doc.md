@@ -7,8 +7,6 @@ Sistema de modais elegantes — janelas flutuantes centradas para confirmações
 
 ## Exemplo visual
 
-![Modal exemplo](https://via.placeholder.com/600x300/2563eb/white?text=Modal+Exemplo)
-
 ```chorty
 md:modal
   ref="confirmar_apagar"
