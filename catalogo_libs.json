@@ -22,6 +22,17 @@
     "docs": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/dados/api/doc.md"
   },
   {
+    "id": "desenho.livre",
+    "nome": "desenho.livre",
+    "alias": "dl",
+    "versao": "1.0",
+    "autor": "comunidade-chorty",
+    "descricao": "Tartaruga gráfica para desenhar formas, linhas e padrões num canvas. Inspirado no módulo turtle do Python.",
+    "tamanho": "3 KB",
+    "url": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/desenho/livre/1.0.chorty-lib",
+    "docs": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/desenho/livre/doc.md"
+  },
+  {
     "id": "estrutura.dados",
     "nome": "estrutura.dados",
     "alias": "ed",
