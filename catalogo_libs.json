@@ -66,6 +66,17 @@
     "docs": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/graficos/doc.md"
   },
   {
+    "id": "interface.modal",
+    "nome": "interface.modal",
+    "alias": "md",
+    "versao": "1.0",
+    "autor": "comunidade-chorty",
+    "descricao": "Sistema de modais elegantes — janelas flutuantes para confirmações, avisos e menus de opções. Leve, rápido e 100% Chorty.",
+    "tamanho": "5 KB",
+    "url": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/interface/modal/1.0.chorty-lib",
+    "docs": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/libs/interface/modal/doc.md"
+  },
+  {
     "id": "interface.notificacoes",
     "nome": "interface.notificacoes",
     "alias": "in",
