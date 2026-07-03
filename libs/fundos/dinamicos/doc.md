@@ -36,8 +36,10 @@ tela "Inicio"
 fim
 ```
 
+##Atributos
+
 | Atributo | Obrigatório | Tipo | Padrão | Descrição |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | `nome` | sim | Texto | — | O que faz |
 | `valor` | não | Número | `0` | O que faz |
 
