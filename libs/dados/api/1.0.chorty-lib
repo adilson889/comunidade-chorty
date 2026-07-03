@@ -6,7 +6,7 @@
   "descricao": "Busca dados de uma API remota e devolve a lista de resultados. Funciona em qualquer contexto, com ou sem app/tela.",
   "namespace": "window._chortyApi",
   "estilos": "",
-  "scripts": "window._chortyApi = window._chortyApi || { buscarSincrono: function(url) { var req = new XMLHttpRequest(); req.open('GET', url, false); req.send(null); if (req.status >= 200 && req.status < 300) { var d = JSON.parse(req.responseText); return Array.isArray(d) ? d : (d.resultados || d.dados || d.items || [d]); } throw new Error('HTTP ' + req.status); } };",
+  "scripts": "window._chortyApi = window._chortyApi || { buscar: function(url) { var req = new XMLHttpRequest(); req.open('GET', url, false); req.send(null); if (req.status >= 200 && req.status < 300) { var d = JSON.parse(req.responseText); return Array.isArray(d) ? d : (d.resultados || d.dados || d.items || [d]); } throw new Error('HTTP ' + req.status); } };",
   "componentes": {},
   "funcoes": {
     "buscar": {
