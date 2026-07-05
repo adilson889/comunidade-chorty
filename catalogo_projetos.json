@@ -8,5 +8,15 @@
     "versao": "1.0",
     "tamanho": "0 KB",
     "url": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/projetos/meu-projeto.chorty"
+  },
+  {
+    "id": "ola-mundo",
+    "nome": "Ola Mundo",
+    "autor": "adilson",
+    "descricao": "Exemplo basico",
+    "saida": "console",
+    "versao": "1.0",
+    "tamanho": "0 KB",
+    "url": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/projetos/ola-mundo.chorty"
   }
 ]
