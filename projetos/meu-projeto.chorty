@@ -1,0 +1,4 @@
+## {"id":"ola-mundo","nome":"Ola Mundo","autor":"adilson","descricao":"Exemplo basico","saida":"console"}
+app "Ola Mundo"
+
+imprimir("Ola, Mundo!")
