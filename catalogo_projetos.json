@@ -3,14 +3,21 @@
     "id": "mini-busca-da-api",
     "nome": "mini busca da api",
     "autor": "Adilson Rafael",
-    "autor_id": "0c50b0b5-c75a-4d3b-9472-b9fe6de08377",
     "descricao": "",
     "saida": "console",
     "versao": "1.0",
-    "tamanho": "1 KB",
-    "url": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/projetos/mini-busca-da-api.chorty",
-    "estrelas": 1,
-    "forks": 1
+    "tamanho": "0 KB",
+    "url": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/projetos/mini-busca-da-api.chorty"
+  },
+  {
+    "id": "ola-mundo",
+    "nome": "Ola Mundo",
+    "autor": "adilson",
+    "descricao": "Exemplo basico",
+    "saida": "console",
+    "versao": "1.0",
+    "tamanho": "0 KB",
+    "url": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/projetos/meu-projeto.chorty"
   },
   {
     "id": "ola-mundo",
@@ -30,8 +37,6 @@
     "saida": "console",
     "versao": "1.0",
     "tamanho": "0 KB",
-    "url": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/projetos/tela-com-fundo-dinamica.chorty",
-    "estrelas": 1,
-    "forks": 2
+    "url": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/projetos/tela-com-fundo-dinamica.chorty"
   }
 ]
