@@ -1,0 +1,29 @@
+## {"id":"tela-com-fundo-dinamica","nome":"tela com fundo dinâmica","autor":"Adilson Rafael","autor_id":"0c50b0b5-c75a-4d3b-9472-b9fe6de08377","descricao":"olhem essa beleza","saida":"console","versao":"1.0"}
+app "Painel"
+
+config
+  saida = "app"
+  importar elementosUI
+  usar biblioteca fundos.dinamicos fd
+fim
+
+tela "Painel"
+    
+  barra_ferramentas
+    
+fim
+  fd:fundo tipo="particulas" 
+   cor1="azul" cor2="azul" 
+   velocidade="1" densidade="50"
+
+  cabecalho
+    titulo "Painel de Controlo"
+  fim
+
+  secao
+    titulo "Estatisticas"
+    texto "Bem-vindo ao seu painel."
+  fim
+fim
+
+fim
