@@ -1,0 +1,13 @@
+## {"id":"mini-busca-da-api","nome":"mini busca da api","autor":"Adilson Rafael","autor_id":"0c50b0b5-c75a-4d3b-9472-b9fe6de08377","descricao":"","saida":"console","versao":"1.0"}
+usar biblioteca dados.api da
+
+# buscar um item
+resultado = da.buscar("https://jsonplaceholder.typicode.com/todos/1")
+imprimir("ID: " & texto(resultado.id))
+imprimir("Titulo: " & resultado.title)
+imprimir("Completo: " & texto(resultado.completed))
+
+# buscar lista
+todos = da.buscar("https://jsonplaceholder.typicode.com/todos")
+imprimir("Total: " & texto(comprimento(todos)))
+imprimir("Primeiro: " & todos[0].title)
