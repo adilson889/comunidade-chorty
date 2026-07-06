@@ -7,9 +7,7 @@
     "saida": "console",
     "versao": "1.0",
     "tamanho": "0 KB",
-    "url": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/projetos/meu-projeto.chorty",
-    "estrelas": 1,
-    "forks": 5
+    "url": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/projetos/meu-projeto.chorty"
   },
   {
     "id": "ola-mundo",
@@ -25,13 +23,10 @@
     "id": "tela-com-fundo-dinamica",
     "nome": "tela com fundo dinâmica",
     "autor": "Adilson Rafael",
-    "autor_id": "0c50b0b5-c75a-4d3b-9472-b9fe6de08377",
     "descricao": "olhem essa beleza",
     "saida": "console",
     "versao": "1.0",
-    "tamanho": "1 KB",
-    "url": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/projetos/tela-com-fundo-dinamica.chorty",
-    "estrelas": 0,
-    "forks": 0
+    "tamanho": "0 KB",
+    "url": "https://raw.githubusercontent.com/adilson889/comunidade-chorty/main/projetos/tela-com-fundo-dinamica.chorty"
   }
 ]
