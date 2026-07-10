@@ -1,4 +1,3 @@
-
 # dados.api (da)
 
 ## Conceito
@@ -11,9 +10,9 @@ Ponte completa para APIs REST. Busca, cria, atualiza, edita e apaga recursos dir
 usar biblioteca dados.api da
 ```
 
-Funções
+## Funções
 
-da.buscar(url)
+### da.buscar(url)
 
 Faz um pedido GET e retorna os dados.
 
@@ -22,7 +21,7 @@ tarefas = da.buscar("https://api.exemplo.com/tarefas")
 imprimir(tarefas[0].titulo)
 ```
 
-da.enviar(url, corpo)
+### da.enviar(url, corpo)
 
 Faz um pedido POST com corpo JSON.
 
@@ -31,7 +30,7 @@ nova = da.enviar("https://api.exemplo.com/tarefas", {"titulo": "Estudar Chorty",
 imprimir(nova.id)
 ```
 
-da.atualizar(url, corpo)
+### da.atualizar(url, corpo)
 
 Faz um pedido PUT para substituir um recurso.
 
@@ -40,7 +39,7 @@ atualizada = da.atualizar("https://api.exemplo.com/tarefas/1", {"titulo": "Estud
 imprimir(atualizada.titulo)
 ```
 
-da.editar(url, corpo)
+### da.editar(url, corpo)
 
 Faz um pedido PATCH para modificar parcialmente um recurso.
 
@@ -49,7 +48,7 @@ resultado = da.editar("https://api.exemplo.com/tarefas/1", {"completa": verdadei
 imprimir(resultado.completa)
 ```
 
-da.apagar(url)
+### da.apagar(url)
 
 Faz um pedido DELETE para remover um recurso.
 
@@ -58,7 +57,7 @@ resultado = da.apagar("https://api.exemplo.com/tarefas/1")
 imprimir("Apagado com sucesso")
 ```
 
-da.cabecalho(chave, valor)
+### da.cabecalho(chave, valor)
 
 Define um cabeçalho HTTP para os próximos pedidos.
 
@@ -68,7 +67,7 @@ da.cabecalho("X-API-Key", "chave-secreta")
 dados = da.buscar("https://api.exemplo.com/protegido")
 ```
 
-da.limparCabecalhos()
+### da.limparCabecalhos()
 
 Remove todos os cabeçalhos definidos.
 
@@ -76,7 +75,7 @@ Remove todos os cabeçalhos definidos.
 da.limparCabecalhos()
 ```
 
-Resumo dos métodos
+## Resumo dos métodos
 
 | Método | HTTP | Descrição |
 | --- | --- | --- |
@@ -88,31 +87,28 @@ Resumo dos métodos
 | `da.cabecalho(chave, valor)` | — | Define cabeçalho |
 | `da.limparCabecalhos()` | — | Limpa cabeçalhos |
 
-Exemplos completos
+## Exemplos completos
 
-Buscar e mostrar dados
+### Buscar e mostrar dados
 
 ```chorty
 usar biblioteca dados.api da
 
-# buscar um item
 resultado = da.buscar("https://jsonplaceholder.typicode.com/todos/1")
 imprimir("ID: " & texto(resultado.id))
 imprimir("Titulo: " & resultado.title)
 imprimir("Completo: " & texto(resultado.completed))
 
-# buscar lista
 todos = da.buscar("https://jsonplaceholder.typicode.com/todos")
 imprimir("Total: " & texto(comprimento(todos)))
 imprimir("Primeiro: " & todos[0].title)
 ```
 
-Criar e atualizar recurso
+### Criar e atualizar recurso
 
 ```chorty
 usar biblioteca dados.api da
 
-# criar
 novo = da.enviar("https://jsonplaceholder.typicode.com/posts", {
   "title": "Aprendendo Chorty",
   "body": "Chorty e incrivel!",
@@ -120,7 +116,6 @@ novo = da.enviar("https://jsonplaceholder.typicode.com/posts", {
 })
 imprimir("Criado ID: " & texto(novo.id))
 
-# atualizar
 atualizado = da.atualizar("https://jsonplaceholder.typicode.com/posts/1", {
   "title": "Chorty Master",
   "body": "Dominando APIs com Chorty.",
@@ -129,24 +124,21 @@ atualizado = da.atualizar("https://jsonplaceholder.typicode.com/posts/1", {
 imprimir("Atualizado: " & atualizado.title)
 ```
 
-API com autenticação
+### API com autenticacao
 
 ```chorty
 usar biblioteca dados.api da
 
-# definir token
 da.cabecalho("Authorization", "Bearer meu-token-secreto")
 
-# buscar dados protegidos
 perfil = da.buscar("https://api.exemplo.com/perfil")
 imprimir("Nome: " & perfil.nome)
 imprimir("Email: " & perfil.email)
 
-# limpar cabeçalhos depois
 da.limparCabecalhos()
 ```
 
-Função reutilizável para buscar
+### Funcao reutilizavel para buscar
 
 ```chorty
 usar biblioteca dados.api da
@@ -164,10 +156,11 @@ fim
 buscarTarefas()
 ```
 
-## Notas técnicas
+## Notas tecnicas
 
-· Os pedidos usam XMLHttpRequest síncrono — o código espera a resposta antes de continuar.
-· O corpo dos pedidos (enviar, atualizar, editar) é enviado como JSON.
-· Cabeçalhos definidos com da.cabecalho aplicam-se a todos os pedidos seguintes.
-· Em caso de erro HTTP (status >= 300), é lançada uma exceção com o código do erro.
-· Funciona em qualquer contexto: script puro, console, app.
+- Os pedidos usam `fetch` com espera sincronizada quando disponivel no ambiente (requer `Atomics` e `SharedArrayBuffer`).
+- Em ambientes sem suporte a `fetch` ou `Atomics`, o shim cai automaticamente para `XMLHttpRequest` sincrono como fallback.
+- O corpo dos pedidos (`enviar`, `atualizar`, `editar`) e enviado como JSON.
+- Cabecalhos definidos com `da.cabecalho` aplicam-se a todos os pedidos seguintes ate `da.limparCabecalhos()` ser chamado.
+- Em caso de erro HTTP (status >= 300), e lancada uma excecao com o codigo do erro — usa `tentar/pegar` para tratar.
+- Funciona em qualquer contexto: script puro, console, app.
