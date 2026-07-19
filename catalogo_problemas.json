@@ -1,0 +1,114 @@
+[
+  {
+    "id": "n1-001",
+    "nivel": 1,
+    "titulo": "Média de duas notas",
+    "dificuldade": "facil",
+    "tags": ["variaveis", "operacoes"],
+    "enunciado": "Cria duas variáveis com notas de um aluno e imprime a média entre elas."
+  },
+  {
+    "id": "n1-002",
+    "nivel": 1,
+    "titulo": "Par ou ímpar",
+    "dificuldade": "facil",
+    "tags": ["condicionais", "operacoes"],
+    "enunciado": "Cria uma variável com um número e imprime se ele é par ou ímpar."
+  },
+  {
+    "id": "n1-003",
+    "nivel": 1,
+    "titulo": "Maior de três números",
+    "dificuldade": "facil",
+    "tags": ["condicionais"],
+    "enunciado": "Cria três variáveis com números diferentes e imprime qual delas é a maior."
+  },
+  {
+    "id": "n1-004",
+    "nivel": 1,
+    "titulo": "Tabuada de um número",
+    "dificuldade": "facil",
+    "tags": ["repeticoes"],
+    "enunciado": "Escolhe um número e imprime a tabuada dele de 1 a 10, uma linha por multiplicação."
+  },
+  {
+    "id": "n1-005",
+    "nivel": 1,
+    "titulo": "Soma de uma lista",
+    "dificuldade": "medio",
+    "tags": ["listas", "repeticoes"],
+    "enunciado": "Cria uma lista com 5 números e imprime a soma de todos eles."
+  },
+  {
+    "id": "n1-006",
+    "nivel": 1,
+    "titulo": "Classificar idade",
+    "dificuldade": "facil",
+    "tags": ["condicionais"],
+    "enunciado": "Cria uma variável com uma idade e imprime 'Criança', 'Adolescente' ou 'Adulto' conforme a faixa etária."
+  },
+  {
+    "id": "n1-007",
+    "nivel": 1,
+    "titulo": "Contar números pares numa lista",
+    "dificuldade": "medio",
+    "tags": ["listas", "repeticoes", "condicionais"],
+    "enunciado": "Cria uma lista com vários números e imprime quantos deles são pares."
+  },
+  {
+    "id": "n2-001",
+    "nivel": 2,
+    "titulo": "Fatorial recursivo",
+    "dificuldade": "medio",
+    "tags": ["funcoes", "recursao"],
+    "enunciado": "Escreve uma função que calcula o fatorial de um número usando recursão, e testa com dois valores diferentes."
+  },
+  {
+    "id": "n2-002",
+    "nivel": 2,
+    "titulo": "Sequência de Fibonacci",
+    "dificuldade": "medio",
+    "tags": ["funcoes", "recursao", "repeticoes"],
+    "enunciado": "Escreve uma função recursiva de Fibonacci e imprime os primeiros 10 termos da sequência."
+  },
+  {
+    "id": "n2-003",
+    "nivel": 2,
+    "titulo": "Relatório de notas de uma turma",
+    "dificuldade": "dificil",
+    "tags": ["funcoes", "listas", "concatenacao", "condicionais"],
+    "enunciado": "Escreve uma função que recebe o nome de um aluno e uma lista de notas, calcula a média e devolve um texto dizendo se o aluno foi aprovado ou reprovado. Chama a função para pelo menos dois alunos diferentes."
+  },
+  {
+    "id": "n2-004",
+    "nivel": 2,
+    "titulo": "Verificar número primo",
+    "dificuldade": "medio",
+    "tags": ["funcoes", "repeticoes", "condicionais"],
+    "enunciado": "Escreve uma função que recebe um número e devolve verdadeiro se ele for primo. Testa a função com vários números diferentes."
+  },
+  {
+    "id": "n2-005",
+    "nivel": 2,
+    "titulo": "Inverter uma lista",
+    "dificuldade": "medio",
+    "tags": ["funcoes", "listas", "repeticoes"],
+    "enunciado": "Escreve uma função que recebe uma lista de números e imprime os elementos dela em ordem inversa, sem usar nenhuma função pronta de inverter."
+  },
+  {
+    "id": "n2-006",
+    "nivel": 2,
+    "titulo": "Calculadora de operações",
+    "dificuldade": "medio",
+    "tags": ["funcoes", "condicionais"],
+    "enunciado": "Escreve uma função que recebe dois números e um texto com o nome da operação ('somar', 'subtrair', 'multiplicar' ou 'dividir') e devolve o resultado correspondente."
+  },
+  {
+    "id": "n2-007",
+    "nivel": 2,
+    "titulo": "Maior valor de uma lista com função",
+    "dificuldade": "facil",
+    "tags": ["funcoes", "listas", "repeticoes"],
+    "enunciado": "Escreve uma função que recebe uma lista de números e devolve o maior valor, percorrendo a lista manualmente com um ciclo."
+  }
+]
